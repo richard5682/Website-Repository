@@ -1,0 +1,25 @@
+<div class='container'>
+  <div class="calendar">
+    <div class="dateheader">
+      <h3>Sunday</h3>
+      <h3>Monday</h3>
+      <h3>Tuesday</h3>
+      <h3>Wednesday</h3>
+      <h3>Thursday</h3>
+      <h3>Friday</h3>
+      <h3>Saturday</h3>
+    </div>
+    <div class="dateblocks">
+      <div *ngFor="let day of days" [class]="day.set ? 'block':'blockdisable'">
+        <div [class]="day.currday ? 'topdatecurr' : 'topdate'">
+          <p>{{day.set ? day.date : ''}}</p>
+          <button mat-icon-button (click)="editbuttonclicked(day)">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </div>
+        <mat-icon>{{day.icon}}</mat-icon>
+        <p>{{day.text}}</p>
+      </div>
+    </div>
+  </div>
+</div>

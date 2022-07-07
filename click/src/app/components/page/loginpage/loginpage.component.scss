@@ -1,0 +1,63 @@
+.background{
+    width:100%;
+    position: fixed;
+    filter: blur(5px);
+    top:0em;
+    left:0;
+    z-index: -1;
+    height: 100%;
+    background-color: red;
+    img{
+        min-width: 100%;
+        height: 100%;
+    }
+}
+.wrapper{
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 10em;
+    .loginwrapper{
+        max-width: 30em;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        border: solid rgb(158, 158, 158) 2px;
+        border-radius: 3em;
+        background-color: white;
+        padding:2em;
+        .logo{
+            padding-left:1em;
+            padding-right:1em;
+            position: relative;
+            background-color: orangered;
+            border-radius: 2em;
+            margin-bottom:2em;
+            img{
+                position: relative;
+                left:-1em;
+                width:15em;
+            }
+        }
+        
+        .loginform{
+            width:100%;
+            max-width:30em;
+            height:fit-content;
+            background-color: rgb(255, 255, 255);
+          
+            border-radius: 1em;
+        }
+        
+    }
+    @media screen AND(max-width:544px){
+        padding-top:10em;
+        padding-left:0em;
+        padding-right:0em;
+        .loginwrapper{
+            padding:1em;
+        }
+    }
+}

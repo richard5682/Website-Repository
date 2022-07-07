@@ -1,0 +1,52 @@
+.wrapper{
+    margin:1em;
+    border-radius: 1em;
+    overflow:hidden;
+    box-shadow: 0 5px 5px 0 rgba(128, 128, 128, 0.555);
+    width: fit-content;
+    margin-bottom:2em;
+    margin:auto;
+    .header{
+        h3{
+            background-color: orange;
+            color:white;
+            margin:0;
+            padding:0.4em;
+        }
+    }
+    .container{
+        width: fit-content;
+        padding:1em;
+        max-height: 10em;
+        display:flex;
+        .imagecontainer{
+            margin-right:1em;
+            img{
+                max-width:10em;
+                max-height:10em;
+            }
+        }
+        .information{
+            h4{
+                margin:0;
+            }
+            p{
+                margin:0;
+            }
+        }
+        .action{
+            margin-left: auto;
+            position: relative;
+            right:1.5em;
+            button{
+                background-color: rgba(161, 161, 161, 0.301);
+            }
+            .red{
+                color:red;
+            }
+            .green{
+                color:green;
+            }
+        }
+    }
+}

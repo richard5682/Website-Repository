@@ -1,0 +1,20 @@
+.wrapper{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    height:100%;
+    button{
+        margin-top:1em;
+        font-size: 1.5em;
+        letter-spacing: 0.2em;;
+        background-color: orangered;
+        color:white;
+        font-weight: bolder;
+    }
+    p{
+        cursor: pointer;
+    }
+    p:hover{
+        text-decoration: underline;
+    }
+}

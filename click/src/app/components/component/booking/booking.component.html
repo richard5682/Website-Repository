@@ -1,0 +1,48 @@
+<div *ngIf="forUser" class="wrapper">
+  <div class="header">
+    <h3>ID : {{booking.id}}</h3>
+  </div>
+  <div class="container">
+    <div class="imagecontainer">
+      <img [src]="servicepicture">
+    </div>
+    <div class="information">
+      <h4>BOOKERS INFO</h4>
+      <p>Service : {{service? service.title:"TITLE"}}</p>
+      <p>Name : {{owner? owner.lastname+" "+owner.firstname:"NAME"}}</p>
+      <p>Book Category : {{booking? booking.subcategory:"SUBCATEGORY"}}</p>
+    </div>
+    <div class="action">
+      <button mat-icon-button>
+        <mat-icon (click)="showMessage()" class='green'>message</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon (click)="deleteBooking()" class="red">cancel</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
+<div *ngIf="!forUser" class="wrapper">
+  <div class="header">
+    <h3>ID : {{booking.id}}</h3>
+  </div>
+  <div class="container">
+    <div class="imagecontainer">
+      <img [src]="profilepicture">
+    </div>
+    <div class="information">
+      <h4>SERVICE INFO</h4>
+      <p>Username : {{user? user.username:"USERNAME"}}</p>
+      <p>Name : {{user? user.lastname+" "+user.firstname:"NAME"}}</p>
+      <p>Book Category : {{booking? booking.subcategory:"SUBCATEGORY"}}</p>
+    </div>
+    <div class="action">
+      <button mat-icon-button>
+        <mat-icon (click)="showMessage()" class='green'>message</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon (click)="deleteBooking()" class="red">cancel</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

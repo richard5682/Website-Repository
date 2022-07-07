@@ -1,0 +1,197 @@
+.menu{
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    width: 15em;
+    height: 18em;
+    z-index: 100;
+    right:0em;
+    top:5.5em;
+    display:flex;
+    flex-direction: column;
+    border-radius: 0 0 0 1em;
+    border-left: grey solid 1px;
+    border-bottom: grey solid 1px;
+    @media screen AND(max-width:768px) {
+        top:4.5em;
+    }
+    @media screen AND(max-width:500px) {
+        top:3em;
+    }
+    .account{
+        padding-top:0.5em;
+        padding-bottom:0.5em;
+        border-bottom: solid grey 1px;
+        background-color: rgb(190, 190, 190);
+    }
+    .options{
+        margin:0.5em;
+        padding:0.5em;
+        display:flex;
+        flex-direction: row;
+        cursor: pointer;
+        border-radius: 0.5em;
+        transition: 0.15s;
+        mat-icon{
+            border-radius: 50%;
+        }
+        h3{
+            font-size: 1em;
+            margin:0;
+            margin-left:1em;
+            cursor: pointer;
+        }
+        
+    }
+    .options:hover{
+        background-color: rgb(219, 219, 219);
+    }
+    
+}
+.wrapper{
+    z-index: 100;
+    position: fixed;
+    font-size:1.0em;
+    top:0;
+    background-color: rgba(210, 105, 30, 0);
+    height: fit-content;
+    width:100%;
+    h1,h3{
+        margin:0;
+    }
+    h1{
+        font-size:3em;
+    }
+    display:block;
+    .topheader{
+        height: 4.5em;
+        display:flex;
+        justify-content: space-evenly;
+        background-color: rgb(255, 133, 33);
+        color:white;
+        box-shadow: 0 5px 10px 0 rgba(112, 112, 112, 0.425);
+        overflow: hidden;
+        .logocontainer{
+            height: fit-content;
+            display:flex;
+            width:13em;
+            padding:.5em;
+            img{
+                cursor: pointer;
+                margin-left: -1em;
+                margin-top: -2.3em;
+                object-position: top;
+                height: 8em;  
+            }
+        }
+        .middlecontainer{   
+            width: fit-content;
+            display:flex;
+            flex-direction: column;
+            justify-content: left;
+            .top{
+                background-color: rgb(255, 133, 33);
+            }
+            .bottom{
+                display:flex;
+                justify-content: center;
+                margin-left: 1em;
+                margin-right: 5em;
+                margin-top: .7em;
+                width: 30em;
+                app-searchbar{
+                    left:0;
+                    width:100%;
+                }
+                
+            }
+            .top{
+                display:flex;
+                flex-direction: row;
+                p{
+                    margin:0;
+                    margin-right:0.5em;
+                   font: Helvetica;
+                }
+            }
+            
+            
+        }
+        .accountviewcontainer{
+            width: fit-content;
+            margin-left: auto;
+            padding:0.4em;
+            padding-right:1em;
+            
+
+        }
+        
+    }
+    .topbar{
+        background-color: rgb(254, 110, 0);
+        height: 1.2em;
+        display:flex;
+        justify-content: flex-end;
+        padding-right: 1em;
+        .info{
+            font: helvetica;
+        button{
+            cursor: pointer;
+            padding-left: 3em;
+            background-color: inherit;
+            color: white;
+            border: none;
+            }
+        } 
+        @media screen AND(max-width:768px){
+            height: 0;
+            display:none;
+        }
+    }
+    @media screen AND(max-width:900px){
+        .topheader{
+            .middlecontainer{
+                display: none;
+            }
+        }
+    }
+    @media screen AND(max-width:500px){
+        font-size: 0.8em;
+    }
+    
+}
+.button{
+    display:flex;
+    width: 100%;
+}
+
+/*.wrapperfix{
+    position: fixed;
+    top:-6em;
+    background-color: rgb(238, 107, 13);
+    width:100%;
+    transition: 1s;
+    color:white;
+    z-index: 100;
+    border-radius: 0 0 1em 1em;
+    box-shadow: 0 5px 5px 0 rgba(65, 65, 65, 0.445);
+    .headerfix{
+        display:flex;
+        justify-content: space-between;
+        h1,img{
+            margin:0;
+        }
+        h1{
+            padding:0.4em;
+        }
+        .logo{
+            width:fit-content;
+        }
+        .accountviewcontainer{
+            width:fit-content;
+            padding-right:1em;
+            height:3em;
+        }
+    }
+    @media screen AND(min-width: 900px){
+        font-size:1.5em;
+    }*/

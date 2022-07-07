@@ -1,0 +1,36 @@
+.wrapper{
+    height: fit-content;
+    h1{
+        background-color: rgb(0, 0, 0);
+        margin:0;
+        text-align: center;
+        padding:0.2em;
+        color:white;
+    }
+    .header{
+        margin-top:1em;
+    }
+    
+    .container{
+        height: fit-content;
+        .editor{
+            width: 100%;
+            overflow-y:hidden;
+            .subcategorypicker{
+                overflow-y:scroll;
+                height:25em;
+                width:100%;
+                display:flex;
+                justify-content: space-evenly;
+                flex-wrap: wrap;
+                box-shadow: inset 1px 4px 11px 0px black;
+                .subcategory{
+                    width:15em;
+                    height:20em;
+                }
+            }
+        }
+    }
+    
+    
+}

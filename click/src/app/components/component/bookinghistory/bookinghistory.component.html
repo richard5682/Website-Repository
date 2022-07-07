@@ -1,0 +1,54 @@
+<div class="wrapper">
+  <div *ngFor="let bookinginfo of bookinginfos" class="container">
+    <div [style.backgroundColor]="bookinginfo.state == 4?'grey':'orangered'" class="header">
+      <div  class="title">
+        Booking ID: {{bookinginfo.booking.id}} <!--Order ID -->
+      </div>
+      <div class="dateplaced">
+        {{bookinginfo.date | date:"MM/dd/YYYY"}}<!--Date Booked-->
+      </div>
+      <div class="timeplaced">
+        {{bookinginfo.date | date:"hh:mm a"}} <!--Time Booked-->
+      </div>
+    </div>
+    <div class="content">
+      <div class="client">
+        <img [src]="bookinginfo.clientpicture">
+      </div>
+      <div class="title">
+        {{bookinginfo.booking.subcategory}} <!--service name & ID-->
+      </div>
+      <div class="details">
+        <div class="datebooked">
+          Booked for: {{bookinginfo.date | date:"MMMM dd YYYY, hh:mm a"}} <!--reserved date-->
+        </div>
+        <div class="ETA">
+          Estimated Time of Completion: Nan<br>
+          Name of client : {{bookinginfo.client.firstname+" "+bookinginfo.client.lastname}} <!--optional(depends ano pwede ipakita sa consumer)-->
+          <br>
+          Address Of Booking: {{bookinginfo.client.address.province+","+bookinginfo.client.address.city+","+bookinginfo.client.address.brgy+","+bookinginfo.client.address.street+","+bookinginfo.client.address.houseno}}
+        </div>
+      </div>
+      <div *ngIf="bookinginfo.state != 4" class="manage">
+        <button  type="button">Manage</button>
+        <div class="menu">
+          <div (click)="finishBooking(bookinginfo.booking)" *ngIf="bookinginfo.state == 3">
+            <p >Finish</p>
+          </div>
+          <div *ngIf="bookinginfo.state == 2">
+            <p >Cancel</p>
+          </div>
+          <div *ngIf="bookinginfo.state == 1">
+            <p >Rekect</p>
+          </div>
+        </div>
+      </div>
+      
+
+      <div class="chat">
+        <button (click)="openChat(bookinginfo.booking)" type="button">Chat</button>
+      </div>
+    </div>
+  </div>
+  
+</div>

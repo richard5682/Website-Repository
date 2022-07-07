@@ -1,0 +1,23 @@
+.wrapper{
+    .picksubcategories{
+        background-color: rgba(128, 128, 128, 0.137);
+        display:flex;
+        justify-content: left;
+        flex-wrap: wrap;
+        border-radius: 1em;
+       
+        
+        .chips{
+            margin:0.3em;
+            padding: 0.2em;
+            display:flex;
+            background-color: white;
+            box-shadow: 0 5px 5px 0 rgba(128, 128, 128, 0.205);
+            border-radius: (50vh);
+            p{
+                padding:0.6em;
+                margin:0;
+            }
+        }
+    }
+}

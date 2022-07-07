@@ -1,0 +1,20 @@
+<div [style.backgroundColor]="selected? 'rgba(255, 204, 108, 0.8)':'white'" (click)="imageClicked()" class="wrapper">
+  <p *ngIf="bookingmode" class="left">BOOKINGS</p>
+  <p *ngIf="servicemode" class="left service">SERVICE</p>
+  <div [class]="bookingmode? 'top booking':'top'">
+    <div class="imagecontainer">
+      <img *ngIf="!servicemode && !bookingmode" [src]="userdata ? domain+'public/image/profileimage/'+userdata.profileimage : 'assets/image1.PNG'">
+      <img *ngIf="servicemode" [src]="servicepictureURL ? servicepictureURL:'assets/image1.PNG'">
+      <mat-icon *ngIf="bookingmode" [class]="bookingclass">book</mat-icon>
+    </div>
+    <div class="rightinfo">
+      <p *ngIf="!servicemode && !bookingmode">{{userdata ? userdata.username : "GUEST"}}</p>
+      <p *ngIf="servicemode">{{servicedata ? servicedata.title : "SERVICE TITLE"}}</p>
+      <p *ngIf="bookingmode">{{bookingdata ? bookingdata.subcategory: "BOOKING Category"}}</p>
+      <div class="lastmessage">
+        <p *ngIf="room.lastmessage">Message : {{room.lastmessage}}</p>
+      </div>
+    </div>
+    
+  </div>
+</div>

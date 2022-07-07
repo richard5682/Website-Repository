@@ -1,0 +1,72 @@
+<div class="wrapper">
+  <div (click)="hide()" class="back">
+    <button mat-button>
+      <mat-icon>undo</mat-icon>
+      GO BACK
+    </button>
+  </div>
+  <div (click)="start()" class="start">
+     <h1>START</h1>
+  </div>
+  <div *ngIf="quickTest" class="test">
+    <div class="information">
+      <h1>QUICK TEST</h1>
+      <h2>In this mode you will given a random 10 question to be answered, this questions are multiple choice</h2>
+    </div>
+  </div>
+  <div *ngIf="mathTest" class="test">
+    <div class="information">
+      <h1>MATH TEST</h1>
+      <h2>This is a test about mathematics, use your calculator to solve the question fast, In this mode you will given a random 10 question to be answered, this questions are multiple choice</h2>
+    </div>
+  </div>
+  <div *ngIf="geasTest" class="test">
+    <div class="information">
+      <h1>GEAS TEST</h1>
+      <h2>General Science is considered one of the most toughest subject in board exam, In this mode you will given a random 10 question to be answered, this questions are multiple choice</h2>
+    </div>
+  </div>
+  <div *ngIf="elecsTest" class="test">
+    <div class="information">
+      <h1>ELECTRONICS TEST</h1>
+      <h2>Electronics In this mode you will given a random 10 question to be answered, this questions are multiple choice</h2>
+    </div>
+  </div>
+  <div *ngIf="estTest" class="test">
+    <div class="information">
+      <h1>EST TEST</h1>
+      <h2>Communication is considered one of the most toughest subject in board exam, In this mode you will given a random 10 question to be answered, this questions are multiple choice</h2>
+    </div>
+  </div>
+  <div *ngIf="unitTest" class="test">
+    <div class="information">
+      <h1>Unit Conversion TEST</h1>
+      <h2>Well you need to be atleast familliar to the unit on electronics world test yourself by converting different kind of units in this test, In this mode you will given a random 10 question to be answered, this questions are multiple choice</h2>
+    </div>
+  </div>
+  <div *ngIf="isStart" class="question">
+    <app-question #question (timeout)="timeout($event)" (answered)="answered($event)" [question]="current_question"></app-question>
+  </div>
+  <div *ngIf="isShowingScore" class="scoreboard">
+    <h1>SCORE</h1>
+    <div class="scores">
+      <div class="mainscore">
+        <app-circlescore [fill]="overallscore" label="OVERALL SCORE"></app-circlescore>
+      </div>
+      <div class="specificscore">
+        <div *ngFor="let score of categoryscore" class="score">
+          <app-circlescore [fill]="score.correct/(score.correct+score.wrong)" [label]="score.category"></app-circlescore>
+        </div>
+      </div>
+    </div>
+    <div (click)="hide()" class="back">
+      <button mat-button>
+        <mat-icon>undo</mat-icon>
+        GO BACK
+      </button>
+    </div>
+  </div>
+  <div #countdown class="countdown">
+    <h1>{{countdownNumber}}</h1>
+  </div>
+</div>

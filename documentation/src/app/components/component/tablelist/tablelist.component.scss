@@ -1,0 +1,28 @@
+table{
+    width:100%;
+    border:solid black 1px;
+    border-collapse: collapse;
+    td,th{
+        padding:0.6em;
+        margin:0;
+        border:solid black 1px;
+    }
+    th{
+        background-color: rgb(192, 192, 192);
+    }
+    tr:nth-child(odd){
+        background-color: rgb(220, 237, 255);
+    }
+    tr:nth-child(even){
+        background-color: rgb(255, 255, 255);
+    }
+    .short{
+        max-width: 2em;
+    }
+    .wide{
+        max-width:8em;
+    }
+    .ewide{
+        max-width:16em;
+    }
+}

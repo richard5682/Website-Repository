@@ -1,0 +1,63 @@
+<div class="wrapper">
+  <div class="topcontainer">
+    <mat-tab-group>
+      <mat-tab label="My Account">
+        <div class="content">
+          MY ACCOUNT CONTENT
+        </div>
+        
+      </mat-tab>
+      <mat-tab label="Settings">
+        <div class="content">
+          MY ACCOUNT CONTENT
+          <div class="myaccount">
+
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Bookings">
+        <div class="content">
+          <mat-tab-group>
+            <mat-tab label="Accepted">
+              <div class="settings">
+                <app-bookinglist [bookings]="bookings_accepted"></app-bookinglist>
+              </div>
+            </mat-tab>
+            <mat-tab label="Pending">
+              <div class="settings">
+                <app-bookinglist [bookings]="bookings_pending"></app-bookinglist>
+              </div>
+            </mat-tab>
+            <mat-tab label="Rejected">
+              <div class="settings">
+                <app-bookinglist [bookings]="bookings_rejected"></app-bookinglist>
+              </div>
+            </mat-tab>
+          </mat-tab-group>
+          
+        </div>
+      </mat-tab>
+      <mat-tab label="History">
+        <div class="content">
+          <div *ngIf="bookings_finish.length > 0" class="bookings">
+            <app-bookinghistory [bookings]="bookings_finish"></app-bookinghistory>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Services">
+        <div class="content">
+          <div class="list">
+            <app-servicelist (clickedService)="changeService($event)" [redirect]="false" title="MY SERVICES" titlecolor="black" color="white" [services]="userservices" [shadow]="true"></app-servicelist>
+          </div>
+          <h1>BOOKINGS</h1>
+          <div *ngIf="pickedService" class="bookings">
+            <app-serviceoverview [servicedata]="pickedService"></app-serviceoverview>
+          </div>
+          <div *ngIf="!pickedService" class="icon">
+            <app-icontemplate icon="dangerous" text="NO SERVICE SELECTED" color="grey"></app-icontemplate>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

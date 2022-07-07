@@ -1,0 +1,39 @@
+<div class="wrapper">
+
+  <div class="province">
+    <mat-form-field [style.width.px]=200 appearance="outline">
+      <mat-label>Province</mat-label>
+      <mat-select [(value)]="picked_province">
+        <mat-option *ngFor="let province of Province" [value]="province">
+          {{province}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="city">
+    <mat-form-field [style.width.px]=200 appearance="outline">
+      <mat-label>City</mat-label>
+      <mat-select [disabled]="picked_province==null" [(value)]="picked_city">
+        <mat-option *ngFor="let city of getCity()" [value]="city">
+          {{city}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="barangay">
+    <mat-form-field [style.width.px]=200 appearance="outline">
+      <mat-label>Barangay</mat-label>
+      <mat-select [disabled]="picked_city==null" [(value)]="picked_barangay">
+        <mat-option *ngFor="let barangay of getBarangay()" [value]="barangay">
+          {{barangay}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="street">
+    <app-textbox (changeval)="streetchange($event)" id="street" label="Street" [minchar]="0"></app-textbox>
+  </div>
+  <div class="houseno">
+    <app-textbox (changeval)="housenochange($event)" id="houseno" label="Building No." [minchar]="0"></app-textbox>
+  </div>
+</div>

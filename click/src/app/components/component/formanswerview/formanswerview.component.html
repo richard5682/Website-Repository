@@ -1,0 +1,12 @@
+<div class="wrapper">
+  <h1>FORM</h1>
+  <div *ngFor="let statement of statements" class="statement">
+    <div class="question">
+      {{statement.number+") "+statement.question}}
+    </div>
+    <div class="answer">
+      {{"  -     "+statement.answer}}
+    </div>
+    <hr>
+  </div>
+</div>

@@ -1,0 +1,119 @@
+.wrapper{
+    width: calc(100% - 2em);
+    font-size: 1em;
+    margin:0;
+    height: 10em;
+    background-color: rgb(142, 8, 214);
+    padding:1em;
+    box-shadow:  0 -5px 5px 0 rgba(0, 0, 0, 0.397);
+    position: relative;
+    h1{
+        margin:0;
+        color:black;
+        font-size: 1.3em;
+        font-family: 'logo';
+
+        color:white;
+        text-align: center;
+        min-width: 10em;
+        border-radius: 50vh;
+    }
+    p{
+        margin:0;
+        color:white;
+        font-size: 0.8em;
+        margin-top:1em;
+        text-align: center;
+    }
+    .top{
+        display:flex;
+        justify-content: space-between;
+        position: relative;
+        @media screen AND(max-width: 650px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 2em;
+        }
+        .block{
+           
+        }
+        .gone{
+            @media screen AND(max-width: 650px) {
+                display: none;
+            }
+        }
+       
+    }
+    .cupcake{
+        background-color: rgb(122, 4, 126);
+        border-radius: 50vh;
+        right:2em;
+        padding:1em;
+        border:solid white 4px;
+        position: absolute;
+        top:-2em;
+        box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.384);
+        img{
+            width: 4em;
+            height: 4em;
+        }
+    }
+    .fblink{
+        z-index: 50;
+        color:white;
+        background-color: rgb(66, 66, 255);
+      
+        display: flex;
+        padding:1em;
+        padding-top:0.3em;
+        padding-bottom:0.3em;
+        border-radius: 50vh;
+        opacity: 0.5;
+        margin-top: 1em;
+        @media screen AND(max-width:850px) {
+            font-size: 0.8em;
+        }
+        @media screen AND(max-width:650px) {
+            font-size: 0.8em;
+        }
+        @media screen AND(max-width:500px) {
+            font-size: 0.6em;
+        }
+        h1{
+            font-family: 'Courier New', Courier, monospace;
+            background-color: rgba(255, 255, 255, 0);
+            color:white;
+            position: relative;
+            top:0.8em;
+            margin:0;
+        }
+        .icon{
+            width: 3em;
+            mat-icon{
+                font-size:3em;
+            }
+        }
+         cursor: pointer;
+    }
+    .fblink:hover{
+        opacity: 1;
+        box-shadow: 0 5px 5px 0 black;
+    }
+    @media screen AND(max-width:650px) {
+        font-size: 1em;
+    }
+    @media screen AND(max-width:500px) {
+        font-size: 1em;
+    }
+}
+.bottom{
+    box-shadow:  0 -5px 5px 0 rgba(0, 0, 0, 0.507);
+    h1{
+        margin:0;
+        color:rgb(0, 0, 0);
+        font-family: 'logo';
+    } 
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <div class="image">
+    <img [src]="imagesrc">
+  </div>
+  <div class="title">
+    <p>{{subcategory}}</p>
+    <p [ngClass]="available>0 ?'green':'red'">{{" AVAILABLE : "+available}}</p>
+  </div>
+  <div [ngClass]="available>0 ?'overlay':'overlay redoverlay'">
+    <mat-icon (click)="emitevent()">
+      {{icon}}
+      <p>{{text}}</p>
+    </mat-icon>
+    
+  </div>
+</div>

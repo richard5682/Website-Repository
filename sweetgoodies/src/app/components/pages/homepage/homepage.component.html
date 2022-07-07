@@ -1,0 +1,20 @@
+<div class="wrapper">
+  <div class="billboardwrapper">
+    <app-billboard [images_link]="billboard1_link"></app-billboard>
+  </div>
+  <div class="bodywrapper">
+    <div class="background">
+      <img src="assets/woodtexture.jpg">
+    </div>
+    <div class="body">
+      <div class="productpaper">
+        <div class="itemlist">
+          <app-itemlist #itemlist (itemClick)="changeProduct($event)" [items]="Items"></app-itemlist>
+        </div>
+        <div class="productlist">
+          <app-productlist [products]="chosenItems"></app-productlist>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

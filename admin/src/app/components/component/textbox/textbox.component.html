@@ -1,0 +1,44 @@
+<div *ngIf="type=='text'" class="wrapper">
+  <mat-form-field [hintLabel]="hint" [appearance]="appearance">
+    <mat-label *ngIf="label">{{label}}</mat-label>
+    <input (change)="inputtextchange()"  (keyup)="inputtextchange()" (paste)="inputtextchange()" (input)="inputtextchange()"
+    [(ngModel)]="value" [style.color]="validate? 'black':'red'" #inputtext matInput type='text'>
+    <mat-hint *ngIf="maxchar" align="end">{{inputtext.value.length}}/{{maxchar}}</mat-hint>
+    <mat-hint align="start">{{ban}}</mat-hint>
+    <mat-icon *ngIf="icon" matSuffix>{{icon}}</mat-icon>
+  </mat-form-field>
+</div>
+<div *ngIf="type=='email'" class="wrapper">
+  <mat-form-field [hintLabel]="hint" [appearance]="appearance">
+    <mat-label *ngIf="label">{{label}}</mat-label>
+    <input (change)="inputemailchange()"  (keyup)="inputemailchange()" (paste)="inputemailchange()" (input)="inputemailchange()"
+    [(ngModel)]="value" [style.color]="validate? 'black':'red'" #inputtext matInput type='text'>
+    <mat-hint *ngIf="maxchar" align="end">{{inputtext.value.length}}/{{maxchar}}</mat-hint>
+    <mat-hint align="start">{{ban}}</mat-hint>
+    <mat-icon *ngIf="icon" matSuffix>{{icon}}</mat-icon>
+  </mat-form-field>
+</div>
+<div *ngIf="type=='password' || type=='repassword'" class="wrapper">
+  <mat-form-field [hintLabel]="hint" [appearance]="appearance">
+    <mat-label *ngIf="label">{{label}}</mat-label>
+    <input (change)="type=='password' ?inputpasschange():inputrepasschange()" 
+    (keyup)="type=='password' ?inputpasschange():inputrepasschange()" 
+    (paste)="type=='password' ?inputpasschange():inputrepasschange()" 
+    (input)="type=='password' ?inputpasschange():inputrepasschange()" 
+    [(ngModel)]="value" [style.color]="validate? 'black':'red'" #inputtext matInput [type]="visible?'text':'password'">
+
+    <mat-hint *ngIf="maxchar" align="end">{{inputtext.value.length}}/{{maxchar}}</mat-hint>
+    <mat-hint align="start">{{ban}}</mat-hint>
+    <button (click)="visible = !visible" mat-icon-button matSuffix>
+      <mat-icon >{{visible ? 'visibility_on':'visibility_off'}}</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+<div  *ngIf="type=='textarea'" class="wrapper">
+  <mat-form-field [hintLabel]="hint" [appearance]="appearance">
+    <mat-label *ngIf="label">{{label}}</mat-label>
+    <textarea  [(ngModel)]="value" [style.color]="validate? 'black':'red'" #inputtext (change)="inputtextchange()"  (keyup)="inputtextchange()" (paste)="inputtextchange()" (input)="inputtextchange()" cdkTextareaAutosize matInput>PUT DESCRIPTION HERE</textarea>
+    <mat-hint *ngIf="maxchar" align="end">{{inputtext.value.length}}/{{maxchar}}</mat-hint>
+    <mat-hint align="start">{{ban}}</mat-hint>
+  </mat-form-field>
+</div>

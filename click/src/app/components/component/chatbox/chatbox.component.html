@@ -1,0 +1,98 @@
+<div id="main" class="wrapper">
+  <div class="header">
+    <h4>MESSAGES</h4>
+    <button (click)="minimize()" mat-icon-button>
+      <mat-icon>cancel</mat-icon>
+    </button>
+  </div>
+  <div class="bottom">
+    <div class="accountlist">
+      <div (click)="triggerselector()" class="accountselector">
+        <app-accountView [bordersize]="'2px'" [bordercolor]="'black'" [size]="'1.5em'" [userdata]="this.login.userLoggedIn" [bottom]="true"></app-accountView>
+        
+      </div>
+      
+      <div class="accountcontainer">
+        <div class="listcontainer">
+          <h3>User Account</h3>
+          <app-accountView [bottom]="true" (imageclick)="setAccount({servicedata:null,userdata:$event})" [userdata]="login.userLoggedIn"></app-accountView>
+          <h3>Service Accounts</h3>
+          <app-serviceaccount (imageclick)="setAccount({servicedata:$event,userdata:null})" *ngFor="let service of userservicesdata" [servicedata]="service"></app-serviceaccount>
+        </div>
+      </div>
+    </div>
+    <div class="messagecontainer">
+      <div id="slidercontainer" class="iconbuttoncontainer">
+        <div class="buttons">
+          <button (click)="photomode=true;bookingmode=false" mat-icon-button class="iconbutton" >
+            <mat-icon>
+              add_photo_alternate</mat-icon>
+          </button>
+          <button (click)="photomode=false;bookingmode=true" mat-icon-button class="iconbutton">
+            <mat-icon>bookings</mat-icon>
+          </button>
+          <button (click)="sendTypeMessage(imagemessage.value)" [disabled]="!((photomode  && imagemessage.validate())||(bookingmode))" mat-icon-button 
+          [class]="((photomode  && imagemessage.validate())||(bookingmode))?'last_active':'last_inactive'">
+            <mat-icon>send</mat-icon>
+          </button>
+        </div>
+        <div class="contentcontainer">
+          <div [style.display]="photomode ? 'initial':'none'">
+            <app-uploadimage #imagemessage [maxfilesizeKB]="2000000"></app-uploadimage>
+          </div>
+          <div [style.display]="bookingmode ? 'initial':'none'">
+            <h1>BOOKING MODE</h1>
+          </div>
+        </div>
+      </div>
+      <div class="topicbox">
+        <div class="leftbox">
+          <app-accountView  *ngIf="currentAccount && currentAccount.userdata" [userdata]="currentAccount.userdata" [bottom]="true"></app-accountView>
+          <app-serviceaccount *ngIf="currentAccount && currentAccount.servicedata"  [servicedata]="currentAccount.servicedata"></app-serviceaccount>
+        </div>
+        <div class="rightbox">
+            <button mat-icon-button>
+              <mat-icon>book</mat-icon>
+            </button>
+            <div *ngIf="currentroom  && currentroom.bookingdata && currentroom.bookingdata.active != 2 && currentroom.bookingdata.active != 3 && currentroom.bookingdata.active != 0 && currentroom.bookingid!=0 && currentAccount && currentAccount.servicedata" class="pricepicker">
+              <app-pricepicker (priceSet)="sendPriceRequest($event)" [currentval]="currentroom.bookingdata.price" [percentage]="0.05"></app-pricepicker>
+            </div>
+              
+        </div>
+        <div *ngIf="currentroom  && currentroom.bookingdata && (currentroom.bookingdata.active == 2 || currentroom.bookingdata.active == 3)" class="price">
+          <h1 [class]="currentroom.bookingdata.active==3? 'set':'notset'"><span>&#8369;</span>{{currentroom.bookingdata.price}}</h1>
+          <h4 *ngIf="currentAccount.servicedata && currentroom.bookingdata && currentroom.bookingdata.active!=3" (click)="setBooking(currentroom.bookingdata)">SET BOOKING</h4>
+        </div>
+      </div>
+      <div id="messagescroller" class="message">
+        <div class="messagescrollable">
+          <app-chatroom [messages]="currentmessages"></app-chatroom>
+        </div>
+      </div>
+      <div #inbox class="inbox">
+        <h2 *ngIf="currentAccount">{{currentAccount.userdata? currentAccount.userdata.firstname:currentAccount.servicedata.title}}'s Inbox</h2>
+        <div *ngFor="let room of rooms" class="account">
+          <app-accountroom *ngIf="(currentAccount.userdata && room.servicedata && (currentAccount.userdata.userID != room.servicedata.ownerid)) || (currentAccount.servicedata && (currentAccount.servicedata.serviceid == room.serviceid))" [selected]="room.roomid == currentroom.roomid" (clickevent)="changeView($event)" [room]="room" [style.font-size]="'1em'"></app-accountroom>
+        </div>
+      </div>
+      <div (click)="showInbox()" class="backbutton">
+        <button mat-icon-button>
+          <mat-icon>arrow_back</mat-icon>
+          <p>INBOX</p>
+        </button>
+      </div>
+      <div class="inputbox">
+        <button (click)="triggerslider()" mat-icon-button class="iconbutton">
+          <mat-icon>{{containershowing? 'expand_more':'expand_less'}}</mat-icon>
+        </button>
+        <input #message type="text" [(ngModel)]="message.value">
+        <button [style.backgroundColor]="message.value == ''?'grey':'orangered'" [disabled]="message.value == ''" (click)="sendMessage(message.value,'text');message.value = ''" mat-icon-button>
+          <mat-icon>
+            send
+          </mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+</div>

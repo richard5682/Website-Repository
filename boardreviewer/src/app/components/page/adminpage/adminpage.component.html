@@ -1,0 +1,66 @@
+<div class="wrapper">
+  <div class="content">
+    <div class="title">
+      <h1>WEBSITE STATS</h1>
+    </div>
+    <div class="content">
+      <h1>VISITORS : {{visitor}}</h1>
+    </div>
+    <div class="title">
+      <h1>QUESTION QUERIER</h1>
+    </div>
+    <div class="querier">
+      <input type="file" (change)="fileChange($event)" placeholder="Upload file" accept=".txt">
+      <mat-form-field appearance="fill">
+        <mat-label>State</mat-label>
+        <mat-select #state (valueChange)="stateSelectorChange(state.value)" >
+          <mat-option [value]="1">
+            Approved
+          </mat-option>
+          <mat-option [value]="0">
+            Not Approved
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="questionid">
+        <app-textbox #idvalue hint="ID of the question"></app-textbox>
+        <button mat-button (click)="openQuestion(idvalue.value)" [disabled]="!idvalue.validate">Search</button>
+      </div>
+    </div>
+    <div *ngIf="question_upload" class="title">
+      <h1>UPLOAD QUESTION</h1>
+    </div>
+    <div *ngIf="question_upload" class="questionrequest">
+      <div class="header">
+        <h1>SUBJECT</h1>
+        <h1>QUESTION</h1>
+        <h1>ANSWER</h1>
+        <h1>CHOICES</h1>
+      </div>
+      <div class="questionslider">
+        <div *ngFor="let question of question_upload" class="question">
+          <app-question_upload [question]="question"></app-question_upload>
+        </div>
+      </div>
+    </div>
+    <div (click)="uploadquestion()" *ngIf="question_upload" class="title">
+      <h2>UPLOAD</h2>
+    </div>
+    <div class="title">
+      <h1>QUESTIONS</h1>
+    </div>
+    <div class="questionrequest">
+      <div class="header">
+        <h1>ID</h1>
+        <h1>QUESTION</h1>
+        <h1>ANSWER</h1>
+        <h1>NAME</h1>
+      </div>
+      <div class="questionslider">
+        <div *ngFor="let question of questions" class="question">
+          <app-questionviewer [question]="question"></app-questionviewer>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

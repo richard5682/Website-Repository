@@ -1,0 +1,35 @@
+.wrapper{
+    h1{
+        background-color: black;
+        color:white;
+        text-align: center;
+        letter-spacing: 0.5em;
+        padding-top:0.2em;
+        padding-bottom:0.2em;
+        margin:0;
+    }
+    .container{
+        display:flex;
+        h2{
+            margin:0;
+            text-align: center;
+        }
+        .leftcontainer{
+            width: 50%;
+            
+        }
+        .rightcontainer{
+            width: 50%;
+        }
+    }
+    .bottom{
+        text-align: center;
+        button{
+            width: 50%;
+            background-color: orangered;
+            color:white;
+            font-size:2em;
+            border-radius: 0.2em 0.2em 0.2em 0.2em;
+        }
+    }
+}

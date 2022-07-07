@@ -1,0 +1,64 @@
+.wrapper{
+    display:flex;
+    background-color: white;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    border-radius: 1em;
+    overflow: hidden;
+    width: 100%;
+    padding:1em;
+    height: 100%;
+    h1{
+        font-weight: 800;
+        margin:0;
+        background-color: black;
+        color:white;
+    }
+    .reload{
+        background-color: black;
+        color:white;
+        position: absolute;
+        bottom:0;
+        width: 100%;
+        left:0;
+        transition: 0.4s;
+        display: flex;
+        justify-content: space-evenly;
+        .iconbutton{
+            width: 3em;
+            height: 3em;
+            border-radius: 50vh;
+            mat-icon{
+                font-size:2em;
+                position: relative;
+                left:-0.15em;
+                top:0.3em;
+            }
+            transition: 0.3s;
+        }
+        .iconbutton:hover{
+            background-color: rgb(44, 44, 44);
+
+        }
+        cursor: pointer;
+    }
+    .red{
+        color:rgb(255, 173, 173);
+    }
+    .yellow{
+        color:rgb(255, 255, 100);
+    }
+    .heartreact{
+        color:rgb(255, 40, 40);
+        position: absolute;
+        bottom:2em;
+        display:flex;
+        p{
+            position: relative;
+            bottom:0.8em;
+            left:0.4em;
+            font-weight: 500;
+        }
+    }
+}

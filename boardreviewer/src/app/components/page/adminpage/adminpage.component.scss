@@ -1,0 +1,96 @@
+.wrapper{
+    width: 100%;
+    .content{
+        margin-top:5em;
+        width: 100%;
+        .querier{
+            background-color: white;
+            padding:2em;
+            display: flex;
+            flex-wrap: wrap;
+            .questionid{
+                margin-left:2em;
+                width: fit-content;
+                height: 4em;
+                display: flex;
+                text-align: center;
+                button{
+                    background-color: black;
+                    color:white;
+                    text-align: center;
+                    width: fit-content;
+                    padding:0;
+                }
+            }
+        }
+        .title{
+            h1{
+                color:white;
+                background-color: black;
+                margin:0;
+                padding: 1em;
+                text-align: center;
+            }
+            h2{
+                color:rgb(255, 255, 255);
+                background-color: rgb(255, 136, 0);
+                font-weight: 700;
+                font-size: 2em;
+                margin:0;
+                padding: 0.2em;
+                text-align: center;
+                cursor: pointer;
+            }
+
+            h2:hover{
+                background-color: rgb(255, 159, 70);
+            }
+        }
+        .content{
+            background-color: white;
+            margin: 0;
+            h1{
+                margin:0;
+                text-align: center;
+                font-size: 3em;
+                padding:1em;
+            }
+        }
+        .questionrequest{
+            width: 100%;
+            
+
+        }
+        .header{
+            display:flex;
+            justify-content: space-between;
+            background-color: rgb(155, 155, 155);
+            color:rgb(0, 0, 0);
+            padding-right:2em;
+            h1{
+                margin-left:1em;
+            }
+        }
+        .questionslider{
+            max-height: 50em;
+            overflow-y: scroll;
+            .question{
+                width: 100%;
+                border-bottom: solid black 1px;
+            }
+        }
+        
+    }
+    @media screen AND(max-width:1024px) {
+        font-size: 0.8em;
+    }
+    @media screen AND(max-width:768px) {
+        font-size: 0.7em;
+    }
+    @media screen AND(max-width:580px) {
+        font-size: 0.5em;
+    }
+    @media screen AND(max-width:425px) {
+        font-size: 0.5em;
+    }
+}

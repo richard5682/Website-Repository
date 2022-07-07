@@ -1,0 +1,20 @@
+<div *ngIf="service" mat-ripple [class]="shadow ? 'wrappershadow':'wrapper'">
+  <div (click)="serviceClicked()" class="container">
+    <div class="thumbnail">
+      <img [src]="pictureURL">
+      <div [style.backgroundColor]="iconColor" *ngIf="icon" class="iconholder">
+        <mat-icon>{{icon}}</mat-icon>
+      </div>
+    </div>
+    <div class="title">
+      <p>{{service.title}}</p>
+    </div>
+    <div class="price">
+      <p>{{service.price | currency:'₱'}}</p>
+    </div>
+    <div *ngIf="ratingarray" class="rating">
+      <mat-icon *ngFor="let rating of ratingarray">star</mat-icon>
+      <p></p>
+    </div>
+  </div>
+</div>

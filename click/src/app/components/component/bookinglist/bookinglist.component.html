@@ -1,0 +1,43 @@
+<div *ngFor="let year of years" class="event-container">
+  <h3  class="year">{{year}}</h3>
+  <div *ngFor="let bookinginfo of bookingcardinfo" >
+    <div *ngIf="bookinginfo.date.getFullYear() == year" class="event">
+      <div [class]="'event-left'+' '+bookinginfo.class">
+        <div *ngIf="bookinginfo.booking.active == 3" class="event-date">
+          <div class="date">{{bookinginfo.date.getDate()}}</div>
+          <div class="month">{{bookinginfo.date | date:"MMMM Y"}}</div>
+        </div>
+        <div *ngIf="bookinginfo.booking.active == 2 || bookinginfo.booking.active == 1" class="event-date">
+          <div class="date">DD</div>
+          <div class="month">PENDING</div>
+        </div>
+        <div *ngIf="bookinginfo.booking.active == 0" class="event-date">
+          <div class="date">XX</div>
+          <div class="month">REJECTED</div>
+        </div>
+      </div>
+      <div class="event-right">
+        <h3 class="event-title">{{bookinginfo.servicedata.title}}</h3>
+        <div class="event-description">
+          {{bookinginfo.servicedata.category}}
+        </div>
+  
+        <div *ngIf="bookinginfo.booking.active == 3" class="event-timing">
+          <mat-icon>alarm_on</mat-icon> {{bookinginfo.date | date:"h:mm a"}}
+        </div>
+        <div *ngIf="bookinginfo.booking.active == 2 || bookinginfo.booking.active == 1" class="event-timing">
+          <mat-icon>alarm_on</mat-icon> - - : - -
+        </div>
+        <div *ngIf="bookinginfo.booking.active == 0" class="event-timing">
+          <mat-icon>alarm_on</mat-icon> - - : - -
+        </div>
+      </div>
+      <div class="click_ripple_shine" (click)="GoToService(bookinginfo.booking)">
+        <button class="click_button">GO TO SERVICE</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="!years || years.length == 0">
+    <app-icontemplate icon="dangerous" text="NO BOOKINGS FOUND" color="grey"></app-icontemplate>
+</div>

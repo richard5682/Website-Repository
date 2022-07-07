@@ -1,0 +1,101 @@
+.wrappershadow{
+    box-shadow: 0 10px 10px 2px rgba(56, 56, 56, 0.459);
+}
+.wrappershadow,.wrapper{
+    h2{
+        margin:0;
+        color:black;
+    }
+    width:100%;
+    height: 100%;
+    .title{   
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        background-color: orange;
+        h2{
+            font-size: 2.5em;
+            color:rgb(255, 255, 255);
+            letter-spacing: 0.5em;
+            @media screen AND(max-width: 1100px){
+                font-size: 1.5em;
+            }
+        }
+        box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.596);
+    }
+    .container{
+        width:100%;
+        height: calc(100% - 1.5em);
+        @media screen AND(max-width: 1000px){
+            height: calc(100% - 1.5em);
+        }
+        .scrollcontainerhorizontal{
+            height: 100%;
+            width:100%;
+            overflow-x: scroll;
+            background-color: white;
+            .content{
+                width:fit-content;
+                height: 100%;;
+                display: flex;
+                
+                .serviceviews{
+                    
+                    width:10em;
+                }
+            }
+        }
+        .scrollcontainervertical{
+            width:100%;
+            height:100%;
+            overflow-y: scroll;
+            background-color: white;
+            .content{
+                width:100%;
+                height: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                .serviceviews{
+                    width:calc(100% / 5);
+                    height: 30vw;
+                    
+                    @media screen AND(max-width: 540px){
+                        width:calc(100% / 3);
+                        height: 50vw;
+                    }
+                    @media screen AND(max-width: 400px){
+                        width:calc(100% / 2);
+                        height: 80vw;
+                    }
+                }
+            }
+            
+        }
+    }
+}
+/* width */
+::-webkit-scrollbar {
+    height: 7px;
+    width: 7px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: #c9c9c944;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(58, 58, 58, 0.575);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(61, 61, 61, 0.582);
+    
+}
+@media screen AND(min-width: 700px){
+    ::-webkit-scrollbar {
+        height: 15px;
+        width: 15px;
+    }
+}

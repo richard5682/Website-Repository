@@ -1,0 +1,88 @@
+.container{
+    h3, p{
+        margin:0;
+        width:fit-content;
+    }
+    width:100%;
+    .calendar{
+        width:100%;
+        .dateheader{
+            display:flex;
+            width:100%;
+            margin:0;
+            h3{
+                width: calc(100% / 7);
+                font-size: 1em;
+                text-align: center;
+                padding:0.2em;
+                background-color: rgb(163, 163, 163);
+            }
+        }
+        .dateblocks{
+            width:100%;
+            display:flex;
+            flex-wrap: wrap;
+            .block{
+                border:solid black 1px;
+                width: calc(calc(100% / 7) - 2px);
+                background-color: white;
+                height:8em;
+                display:flex;
+                flex-direction: column;
+                .topdate{
+                    display:flex;
+                    padding-top:0.4em;
+                    height:1em;
+                    p{
+                        margin:0;
+                        width:100%;
+                    }
+                    button{
+                        position: relative;
+                        bottom:0.4em;
+                        opacity: 0.1;
+                        transition:0.5s;
+                    }
+                    button:hover{
+                        opacity: 1;
+                    }
+                }
+                .topdatecurr{
+                    display:flex;
+                    padding-top:0.4em;
+                    border-top:solid rgba(255, 0, 0, 0.493) 10px;
+                    border-radius: 2.5px;
+                    height:1em;
+                    p{
+                        margin:0;
+                        width:100%;
+                    }
+                    button{
+                        position: relative;
+                        bottom:0.4em;
+                        opacity: 0.1;
+                        transition:0.5s;
+                    }
+                    button:hover{
+                        opacity: 1;
+                    }
+                }
+                
+            }
+            .blockdisable{
+                border:solid black 1px;
+                width: calc(calc(100% / 7) - 2px);
+                background-color: rgb(121, 121, 121);
+                height:8em;
+                p{
+                    
+                }
+                button{
+                    display:none;
+                }
+            }
+        }
+       
+
+    }
+}

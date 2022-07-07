@@ -1,0 +1,71 @@
+<div class="background">
+  <img src="https://thumbs.dreamstime.com/b/cleaning-supplies-orange-background-house-cleaning-service-housekeeping-concept-top-view-orange-bottle-cleaning-174115516.jpg">
+</div>
+
+<div #formwrapper class="wrapper">
+  <div class="form">
+    <mat-vertical-stepper #stepper>
+      <mat-step label="Account Information">
+        <app-textbox #username label="Username" hint="You will use this to access the site" maxchar=20></app-textbox>
+        <app-textbox #email type="email" label="Email"></app-textbox>
+        <app-textbox #password type="password" label="Password" hint="You will use this to access the site" maxchar=20></app-textbox>
+        <app-textbox #refpassword [passref]="password" type="repassword" label="Re-Password" hint="You will use this to access the site" maxchar=20></app-textbox>
+        <app-uploadimage #profileimage></app-uploadimage>
+      </mat-step>
+      <mat-step label="Personals Information">
+        <app-textbox #firstname label="Firstname"></app-textbox>
+        <app-textbox #lastname label="Lastname"></app-textbox>
+        <app-textbox #middlename label="Middlename"></app-textbox>
+        <mat-form-field appearance="fill">
+          <mat-label>Birthdate</mat-label>
+          <input readonly #birthday matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </mat-step>
+      <mat-step label="Address Information">
+        <app-locationPicker #location></app-locationPicker>
+      </mat-step>
+      <mat-step label="Review Information">
+        <p>Review Your Info</p>
+        <div class="profile">
+          <div class="imageprofile">
+            <img [src]="profileimage.value!=undefined ?profileimage.value:'assets/image1.PNG'">
+            <p *ngIf="firstname.value != undefined && lastname.value != undefined && middlename.value != undefined">{{firstname.value+" "+lastname.value+" "+middlename.value}}</p>
+            <p *ngIf="!(firstname.value != undefined && lastname.value != undefined && middlename.value != undefined)">_ _ _ _   _ _ _ _   _ _ _ _</p>
+          </div>
+        <p>Username : {{username.value}}</p>
+        <p>Email : {{email.value}}</p>
+        
+        <p>Birthdate : {{birthday.value}}</p>
+        <p>Address : {{location.getString()}}</p>
+        </div>
+        
+        <button [disabled]="!(username.validate && password.validate && refpassword.validate && email.validate &&
+                        firstname.validate && lastname.validate && middlename.validate && birthday.value != '' && location.validate() && profileimage.value!=undefined)"
+         (click)="validate(username.value,email.value)" mat-raised-button>SUBMIT</button>
+      </mat-step>
+    </mat-vertical-stepper>
+  </div>
+</div>
+
+<div #verificationwrapper class="verificationwrapper">
+  <div class="form">
+    <h2>VERIFICATION</h2>
+    <h4>An email containg the code was sent to {{email.value}}</h4>
+    <div class="textbox">
+      <app-textbox #code label="CODE"></app-textbox>
+    </div>
+    
+    <div class="buttons">
+      <button [disabled]="!(username.validate && password.validate && refpassword.validate && email.validate &&
+                        firstname.validate && lastname.validate && middlename.validate && birthday.value != '' && location.validate() && profileimage.value!=undefined)"
+         (click)="validate(username.value,email.value)" mat-raised-button>RESEND CODE</button>
+      <button [disabled]="!(username.validate && password.validate && refpassword.validate && email.validate &&
+         firstname.validate && lastname.validate && middlename.validate && birthday.value != '' && location.validate() && profileimage.value!=undefined)"
+       (click)="register(username.value,password.value,firstname.value,lastname.value,middlename.value,
+       code.value,birthday.value,location.getValue(),profileimage.value)" mat-raised-button>REGISTER</button>
+    </div>
+    
+  </div>
+</div>

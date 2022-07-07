@@ -1,0 +1,6 @@
+<div class="wrapper">
+ <app-textbox #username appearance="fill" type="text" hint="Enter Your Username" label="Username" maxchar=20></app-textbox>
+ <app-textbox #password appearance="fill" type="password" hint="Enter Your Password" label="Password" maxchar=30></app-textbox>
+ <button (click)="login(username.value,password.value)" mat-raised-button>LOGIN</button>
+    <p (click)="router.navigate(['register'])">Dont have an account? Register here</p>
+</div>

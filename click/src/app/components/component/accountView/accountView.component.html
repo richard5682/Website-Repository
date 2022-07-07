@@ -1,0 +1,18 @@
+<div class="wrapper" #mainwrapper>
+  <div class="top">
+    <div *ngIf="!right && !bottom" class="leftinfo">
+      <p>{{userdata ? userdata.username : "GUEST"}}</p>
+    </div>
+    <div class="imagecontainer">
+      <img #image (click)="imageClicked()" [src]="userdata && userdata.username!='admin_root'? domain+'public/image/profileimage/'+userdata.profileimage : 'assets/image1.PNG'">
+    </div>
+    <div *ngIf="right && !bottom" class="rightinfo">
+      <p>{{userdata ? userdata.username : "GUEST"}}</p>
+    </div>
+  </div>
+  <div class="bottom">
+    <div *ngIf="bottom" class="rightinfo">
+      <p>{{userdata ? userdata.username : "GUEST"}}</p>
+    </div>
+  </div>
+</div>

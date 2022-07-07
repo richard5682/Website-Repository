@@ -1,0 +1,18 @@
+<div #wrapper class="mainbillboard">
+  <div #shadow class="insetshadow"></div>
+  <div #image class="image">
+    <img [src]="images_link[image_index]">
+  </div>
+  <div (click)="loader.redirect('https://www.facebook.com/Sweetdreamsgoodies')" class="fblink">
+    <div class="icon">
+      <mat-icon>facebook</mat-icon>
+    </div>
+    
+    <h1>facebook/Sweetdreamsgoodies</h1>
+  </div>
+  <div class="logocontainer">
+    <div  class="logo">
+      <img (click)="loader.redirect('https://www.facebook.com/Sweetdreamsgoodies')" src="assets/thumbmark.PNG">
+    </div>
+  </div>
+</div>

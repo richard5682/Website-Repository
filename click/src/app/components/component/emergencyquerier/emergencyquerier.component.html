@@ -1,0 +1,19 @@
+<div class="wrapper">
+  <h1>INFORMATION</h1>
+  <div class="container">
+    <div class="leftcontainer">
+      <h2>YOUR LOCATION</h2>
+      <app-locationPicker #location></app-locationPicker>
+    </div>
+    <div class="rightcontainer">
+      <h2>CATEGORY</h2>
+      <app-emergencypicker #category></app-emergencypicker>
+    </div>
+  </div>
+  <div class="bottom">
+    <button [disabled]="!(location.validate() && category.value != undefined)" [style.backgroundColor]="(location.validate() && category.value != undefined)?'orangered':'grey'"
+    (click)="SearchButtonClicked(category.value, location.getValue())" mat-raised-button>
+      SEARCH
+    </button>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+.wrapper{
+    cursor: pointer;
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    border-radius: 2.5em 0 0 2.5em;
+    box-shadow: 0 5px 5px 0 grey;
+    bottom:1em;
+    right:-14.5em;
+    transition:0.5s;
+    z-index: 100;
+    .container{
+        display:flex;
+        button{
+            width: 5em;
+            height: 5em;
+            mat-icon{
+                transition:1s;
+                color:red;
+                font-size: 5em;
+                position: relative;
+                right:0.33em;
+            }
+        }
+        h1{
+            margin:0;
+            margin-top:0.5em;
+            padding-right:0.5em;
+            padding-left:0.5em;
+        }
+    }
+}
+.wrapper:hover{
+    background-color: orangered;
+    color:white;
+    right:0;
+    .container{
+        button{
+            mat-icon{
+                color:white
+            }
+        }
+    }
+}

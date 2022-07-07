@@ -1,0 +1,40 @@
+<div class="wrapper">
+  <mat-vertical-stepper>
+    <mat-step label="Service Information">
+      <h3>SERVICE HEADER</h3>
+      <app-textbox #title label="Title" [maxchar]="40"></app-textbox>
+      <div class="descriptionbox">
+        <app-textbox  #desc type="textarea" label="Description" [maxchar]="300"></app-textbox>
+      </div>
+      <h3>TYPE OF SERVICE</h3>
+      <app-servicepicker #service></app-servicepicker>
+      <h3>LOCATION OF SERVICE</h3>
+      <app-locationPicker #location></app-locationPicker>
+      <app-textbox #price label="Price"></app-textbox>
+    </mat-step>
+    <mat-step label="Service View">
+      <h3>UPLOAD THUMBNAIL</h3>
+      <app-uploadimage [required]="true" #thumbnail></app-uploadimage>
+      <h3>UPLOAD PICTURES</h3>
+      <app-uploadimage #image1 [required]="true"></app-uploadimage>
+      <app-uploadimage #image2 [required]="true" [style.display]="image1.value != undefined ? 'initial':'none'" ></app-uploadimage>
+      <app-uploadimage #image3 [style.display]="image2.value != undefined ? 'initial':'none'" ></app-uploadimage>
+      <app-uploadimage #image4 [style.display]="image3.value != undefined ? 'initial':'none'" ></app-uploadimage>
+      <app-uploadimage #image5 [style.display]="image4.value != undefined ? 'initial':'none'" ></app-uploadimage>
+    </mat-step>
+    <mat-step label="Service Requirement">
+      <h3>Valid Goverment ID</h3>
+      <app-uploadimage #id></app-uploadimage>
+      <h3>NBI Clearance</h3>
+      <app-uploadimage #id></app-uploadimage>
+      <h3>Age of Service Provider</h3>
+      <app-textbox label="AGE"></app-textbox>
+      <h3>GCASH Account</h3>
+      <app-textbox label="GCASH"></app-textbox>
+      <h3>SUBMIT</h3>
+      <button [disabled]="!(price.validate && title.validate && desc.validate && location.validate() && service.validate() && thumbnail.validate() && image1.validate() && image2.validate())"
+      mat-raised-button (click)="submit(price.value,title.value,desc.value,service.getValue(),location.getValue(),thumbnail.value,image1.value,image2.value,image3.value,image4.value,image5.value)"
+      >SUBMIT</button>
+    </mat-step>
+  </mat-vertical-stepper>
+</div>

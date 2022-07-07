@@ -1,0 +1,28 @@
+.wrapper{
+    width:100%;
+    margin:0;
+    h1{
+        background-color:darkslateblue;
+        margin:0;
+        color:white;
+        font-size: 3.3em;
+        padding:0.2em;
+        border-radius: 0 0 0.5em 0.5em;
+    }
+    button{
+        text-align: center;
+        margin:1em;
+        background-color:rgba(71, 61, 139, 0.397);
+        p{
+            left:-0.3em;
+            position: relative;
+            bottom:-1em;
+            margin:0;
+            font-size:1em;
+        }
+        mat-icon{
+            position: relative;
+            bottom:1.8em;
+        }
+    }
+}

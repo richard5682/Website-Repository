@@ -1,0 +1,32 @@
+
+<div #main class="main">
+  <div class="wrapper">
+    
+    <div class="form">
+      <div class="header">
+        <h1 *ngIf="creationmode">Create Item</h1>
+        <h1 *ngIf="!creationmode">Edit Item</h1>
+        <div class="back">
+          <button (click)="cancel()" mat-icon-button>
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </div>
+      </div>
+      <div class="body">
+        <div class="textbox">
+          <app-textbox #title [type]="'text'" [label]="'Title'" [minchar]='1' [maxchar]='50' [hint]="'This is what it will show in the Product list'"></app-textbox>
+        </div>
+        <div class="button">
+          <button [disabled]='!title.validate' (click)="addTitle(title.value)" mat-icon-button [ngClass]="title.validate ? '':'deact'">
+            <mat-icon>check</mat-icon>
+          </button>
+        </div>
+      </div>
+     
+      
+    </div>
+  </div>
+  <div class="shadow">
+
+  </div>
+</div>

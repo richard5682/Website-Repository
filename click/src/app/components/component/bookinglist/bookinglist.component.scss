@@ -1,0 +1,169 @@
+.event-container {
+    font-family: "Roboto", sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .event-container h3.year {
+    font-size: 40px;
+    text-align: center;
+    border-bottom: 1px solid #b1b1b1;
+  }
+  
+  .event-container .event {
+    box-shadow: 0 4px 16px -8px rgba(0, 0, 0, 0.4);
+    display: flex;
+    border-radius: 8px;
+    margin: 32px 0;
+  }
+  
+  .event .event-left {
+    min-width: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #eee;
+    padding: 8px 48px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px 0 0 8px;
+  }
+  
+  .event .event-left .date {
+    font-size: 56px;
+    position: relative;
+  }
+  
+  .event .event-left .month {
+    font-size: 16px;
+    font-weight: normal;
+  }
+  
+  .event .event-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 24px;
+  }
+  
+  .event .event-right h3.event-title {
+    font-size: 24px;
+    margin: 24px 0 10px 0;
+    color:black;
+    text-transform: uppercase;
+  }
+  
+  .event .event-right .event-timing {
+    background:orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    padding: 8px;
+    border-radius: 16px;
+    margin: 24px 0;
+    font-size: 14px;
+  }
+  
+  .event .event-right .event-timing img {
+    height: 20px;
+    padding-right: 8px;
+  }
+  .click_button {
+    position: relative;
+    text-decoration: none;
+    border: none;
+    font-size: 18px;
+    padding: 13px 35px;
+    background-image: linear-gradient(0deg, #ffcc3d, #ff5722);
+    color: #fff;
+    border-radius: 50px;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.3s;
+    
+  }.click_ripple_shine {
+    display: flex;
+    position: relative;
+    right:-5em;
+    border: none;
+    padding: 13px 35px;
+    background-image: linear-gradient(45deg, #ffcc3d, #ff5722);
+    color: #fff;
+    border-radius: 50px;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 2px 2px #0003;
+    overflow: hidden;
+    transition: 0.3s;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .click_ripple_shine:hover {
+    box-shadow: 0 2px 2px #0004, 0 2px 6px #0002, 0 2px 16px #0003;
+  }
+  
+  .click_ripple_shine:active {
+    transform: scale(0.9);
+  }
+  
+  .click_ripple_shine>.ripple_this {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+  
+    animation-name: animate_this;
+    animation-duration: 0.8s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+  }
+  .accepted{
+    background-color: orangered;
+  }
+  .pending{
+    background-color: green;
+    font-size:100em;
+  }
+  .rejected{
+    background-color: red;
+  }
+  @keyframes animate_this {
+    0% {
+        width: 0px;
+        height: 0px;
+        opacity: 0.8;
+    }
+  
+    100% {
+        width: 500px;
+        height: 500px;
+        opacity: 0;
+    }
+  }
+  
+  @media (max-width: 550px) {
+    .event {
+      flex-direction: column;
+    }
+  
+    .event .event-left {
+      padding: 0;
+      border-radius: 8px 8px 0 0;
+    }
+  
+    .event .event-left .event-date .date,
+    .event .event-left .event-date .month {
+      display: inline-block;
+      font-size: 24px;
+    }
+  
+    .event .event-left .event-date {
+      padding: 10px 0;
+    }
+  }

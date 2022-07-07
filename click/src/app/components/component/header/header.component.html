@@ -1,0 +1,72 @@
+<div *ngIf="isMenuShowing" class="menu">
+  <div class="account">
+    <app-accountView (imageclick)="gotoAccountPage($event)" [bottom]="false" [right]="true" [userdata]="loginuser"></app-accountView>
+  </div>
+  
+  <div class="options">
+    <mat-icon>home</mat-icon>
+    <h3>ACCOUNT</h3>
+  </div>
+  <div class="options" (click)="this.chat.maximize()">
+    <mat-icon>send</mat-icon>
+    <h3>MESSAGES</h3>
+  </div>
+  <div class="options" (click)="login.logout()">
+    <mat-icon>logout</mat-icon>
+    <h3>LOGOUT</h3>
+  </div>
+</div>
+<div class="wrapper">
+  <div class="topbar">
+    <div class="info">
+      <!-- <button type="button" (click)="this.chat.maximize()">MESSAGE</button> -->
+      <button type="button">BE A PROVIDER</button>
+      <button tip="Create Service" (click)="router.navigate(['servicecreation'])" *ngIf="logIn">CREATE SERVICE</button>
+      <button tip="Create Emergency Service" (click)="router.navigate(['emergencycreation'])" *ngIf="admin">Create Emergency Service</button>
+      <button tip="Register" (click)="router.navigate(['register'])" *ngIf="!logIn">SIGNUP</button>
+      <button tip="Login" (click)="router.navigate(['login'])" *ngIf="!logIn">LOGIN</button>
+    </div>
+  </div>
+  <div class="topheader">
+    <div class="logocontainer">
+      <img (click)="router.navigate(['homepage'])" src="assets/logo.png">
+    </div>
+    <div class="middlecontainer">
+      <div class="top">
+        
+      </div>
+      <div class="bottom">
+        <app-searchbar></app-searchbar>
+      </div>
+    </div>
+    
+    <div class="accountviewcontainer">
+      <app-accountView (imageclick)="this.logIn ? isRequestingMenu=true:router.navigate(['login'])" [bottom]="false" [right]="false" [userdata]="loginuser"></app-accountView>
+    </div>
+  </div>
+  <!--
+  <div class="button">
+    <app-navbutton  tip="Homepage" (click)="router.navigate(['homepage'])" [icon]="'homepage'" ></app-navbutton>
+    <app-navbutton  tip="Create Service" (click)="router.navigate(['servicecreation'])" *ngIf="logIn" [icon]="'cleaning_services'" ></app-navbutton>
+    <app-navbutton  tip="Create Emergency Service" (click)="router.navigate(['emergencycreation'])" *ngIf="admin" [icon]="'error'" ></app-navbutton>
+    <app-navbutton  tip="Register" (click)="router.navigate(['register'])" *ngIf="!logIn" [icon]="'app_registration'" ></app-navbutton>
+    <app-navbutton  tip="Login" (click)="router.navigate(['login'])" *ngIf="!logIn" [icon]="'login'" ></app-navbutton>
+    <app-navbutton  tip="Logout" (click)="login.logout()"*ngIf="logIn" [icon]="'logout'" ></app-navbutton>
+  </div>-->
+  
+
+
+</div>
+
+<!--
+<div id="wrapperfix" class="wrapperfix">
+  <div class="headerfix">
+    <div class="logo">
+      <h1>CLICK.</h1>
+    </div>
+    <div class="accountviewcontainer">
+      <app-accountView (imageclick)="gotoAccountPage($event)" [right]="false" [userdata]="loginuser"></app-accountView>
+    </div>
+  </div>
+</div>
+-->

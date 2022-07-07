@@ -1,0 +1,23 @@
+<div class="wrapper">
+  <div (click)="router.navigate(['homepage'])" class="logowrapper">
+    <div class="logo">
+      <div class="hide">
+
+      </div>
+      <div class="hide1">
+
+      </div>
+      <div class="text">
+        <h1>ECE</h1>
+        <h4>BOARD REVIEWER</h4>
+      </div>
+    </div>
+  </div>
+  <div class="menu">
+    <h1 *ngIf="isAdmin" (click)="router.navigate(['adminpage'])">ADMIN</h1>
+    <h1 (click)="router.navigate(['questionsubmission'])">SUBMIT A QUESTION</h1>
+    <h1 (click)="router.navigate(['aboutuspage'])">ABOUT US</h1>
+    <h1 (click)="gotoLink('https://docs.google.com/forms/d/e/1FAIpQLSdUaL6ABTofvaUXxTQ3dmw-M0i0RmmC2PpEGDM2Gt9RP5FwMw/viewform?usp=pp_url')">SUGGESTION</h1>
+    <h1 (click)="gotoLink('https://docs.google.com/forms/d/e/1FAIpQLSeJ__NLU0VMH48nyQUHBbBfl2-wMumR4Q0T4CzP3ByvAo2Zbw/viewform')">BUG REPORT</h1>
+  </div>
+</div>

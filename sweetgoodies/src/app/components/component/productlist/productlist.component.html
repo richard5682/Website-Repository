@@ -1,0 +1,12 @@
+<div class="wrapper">
+  <div class="productlist">
+      <div *ngFor="let p of products" class="productblock">
+        <app-productblock [admin]='admin' [product]="p"></app-productblock>
+      </div>
+      <div *ngIf="admin" class="productblock">
+        <div (click)="addProduct()" class="addproduct">
+          <h1>ADD PRODUCT</h1>
+        </div>
+      </div>
+  </div>
+</div>

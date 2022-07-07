@@ -1,0 +1,20 @@
+.wrapper{
+    width: 100%;
+    border-radius: 1em 1em 1em 1em;
+    padding:1em;
+    background-color: rgb(255, 235, 121);
+    box-shadow: 0 5px 5px 0 rgba(128, 128, 128, 0.5);
+    margin:0;
+    h1{
+        width: 100%;
+        text-align: center;
+    }
+    .statement{
+        margin-top:1em;
+        .answer{
+            font-weight: bold;
+            margin-left:2em;
+        }
+    }
+    
+}

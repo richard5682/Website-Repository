@@ -1,0 +1,43 @@
+.wrapper{
+    
+    margin:0;
+    .container{
+        background-color: rgba(71, 61, 139, 0.349);
+        margin:0;
+        margin-left:2em;
+        margin-right:2em;
+        h1{
+            background-color:darkslateblue;
+            margin:0;
+            color:white;
+            padding:0.2em;
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+            margin:0;
+            font-size: 2em;
+            color:rgb(32, 38, 61)
+        }
+        .topinfo{
+            margin-left:1em;
+            h1{
+                background-color:darkslateblue;
+                margin:0;
+                color:white;
+                padding:0.2em;
+                padding-left:2em;
+                margin-bottom:1em;
+                border-radius: 0.5em 0 0 0.5em;
+            }
+            p{
+                margin:0;
+            }
+            
+        }
+        .table{
+            overflow:scroll;
+        }
+    }
+    
+}

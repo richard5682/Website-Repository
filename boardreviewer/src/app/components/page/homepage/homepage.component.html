@@ -1,0 +1,151 @@
+<div class="wrapper">
+  <!-- <div class="facts">
+    <div class="factbox">
+      <app-factbox></app-factbox>
+    </div>
+    <div class="factbox">
+      <app-factbox></app-factbox>
+    </div>
+    <div class="factbox">
+      <app-factbox></app-factbox>
+    </div>
+  </div> -->
+  <div class="card">
+    <div class="cardtitle">
+      <h1>Your Statistics</h1>
+     </div>
+    <div *ngIf="overallscore" class="scores">
+      <div class="mainscore">
+        <app-circlescore [fill]="this.overallscore" label="OVERALL PERFORMANCE"></app-circlescore>
+      </div>
+      <div class="specificscore">
+        <div *ngFor="let score of categoryscore" class="score">
+          <app-circlescore [fill]="score.correct/(score.correct+score.wrong)" [label]="score.category"></app-circlescore>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!overallscore" class="noscore">
+      <h1>Take a test to reveal your statistics</h1>
+    </div>
+  </div>
+   <div class="card">
+     <div class="cardtitle">
+      <h1>TEST</h1>
+     </div>
+     <div class="content">
+       <div (click)="prev_action()" class="prev button unselectable">
+        <mat-icon>chevron_left</mat-icon>
+       </div>
+       <div (click)="next_action()" class="next button unselectable">
+        <mat-icon>chevron_right</mat-icon>
+       </div>
+      <div #actionsslider class="actions">
+        <div (click)="startTest(1)" class="action unselectable">
+          <mat-icon>offline_bolt</mat-icon>
+          <h1> < QUICK TEST > </h1>
+        </div>
+        <div (click)="startTest(2)" class="action unselectable">
+          <mat-icon>superscript</mat-icon>
+          <h1> < MATH TEST > </h1>
+        </div>
+        <div (click)="startTest(3)" class="action unselectable">
+         <mat-icon>science</mat-icon>
+         <h1>  < GEAS TEST > </h1>
+        </div>
+        <div (click)="startTest(4)" class="action unselectable">
+          <mat-icon>memory</mat-icon>
+          <h1>  < ELECS TEST > </h1>
+         </div>
+         <div (click)="startTest(5)" class="action unselectable">
+          <mat-icon>settings_input_antenna</mat-icon>
+          <h1>  < EST TEST > </h1>
+         </div>
+         <div (click)="startTest(6)" class="action unselectable">
+          <mat-icon>format_list_numbered_rtl</mat-icon>
+          <h1>  < UNIT TEST > </h1>
+         </div>
+       </div>
+       <div *ngIf="isTestStart" class="test">
+        <app-test (event_finish)="loadStats()" (event_hide)="hideTest()" [mode]="testmode"></app-test>
+       </div>
+     </div>
+   </div>
+   <div class="card">
+    <div class="cardtitle">
+      <h1>QUESTION OF THE DAY</h1>
+     </div>
+    <div class="noscore">
+      <h1>COMING SOON</h1>
+    </div>
+  </div>
+  <div class="card">
+    <div class="cardtitle">
+      <h1>LEADERBOARD</h1>
+     </div>
+    <div class="noscore">
+      <h1>COMING SOON</h1>
+    </div>
+  </div>
+  <div class="card">
+    <div class="cardtitle">
+      <h1>Question Sources</h1>
+     </div>
+    <div class="references">
+      <div (click)="gotoLink('https://pinoybix.org')" class="reference">
+        <img src="https://pinoybix.org/wp-content/uploads/2019/12/Pinoybix-header-logo-batman-v6.png">
+      </div>
+      
+    </div>
+  </div>
+    <div #greeter class="greeter">
+      <div class="greetcard">
+        <div class="mascot">
+          <div class="head">
+            <mat-icon>support_agent</mat-icon>
+          </div>
+          <div class="headback">
+  
+          </div>
+          <div class="body">
+  
+          </div>
+          <div class="hand">
+            <div class="holding">
+              <mat-icon>device_unknown</mat-icon>
+            </div>
+          </div>
+          
+        </div>
+        <div class="dialog">
+            <h2>It seems that this is your first time using BoardReviewer please enter your name. _</h2>
+        </div>
+        <div class="inputname">
+          <h1>Your Name</h1>
+          <div class="textbox">
+            <app-textbox #name [maxchar]="10" [minchar]="3" label="CodeName"></app-textbox>
+          </div>
+          <div (click)="name.validate ? setName(name.value):null" [ngClass]="name.validate?'submit':'disabled'">
+            <h1>SUBMIT</h1>
+          </div>
+        </div>
+      </div>
+     <div class="activitiesad">
+       <div class="activity">
+         <mat-icon>edit</mat-icon>
+         <h1>TEST YOURSELF</h1>
+         <p>Test yourself with our test with the questions from our database.</p>
+       </div>
+       <div class="activity">
+        <mat-icon>format_quote</mat-icon>
+        <h1>GIVE YOUR OWN QUESTION</h1>
+        <p>Contribute your knoweldege to the community by submiting your own question.</p>
+      </div>
+      <div class="activity">
+        <mat-icon>self_improvement</mat-icon>
+        <h1>IMPROVE YOUR KNOWLEDGE</h1>
+        <p>Keep track of your progress with our statistics and compare how you are doing with the community.</p>
+      </div>
+     </div>
+  </div>
+  
+</div>

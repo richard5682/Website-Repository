@@ -1,0 +1,47 @@
+<table>
+  <tr>
+    <th *ngFor="let key of keys">{{key}}</th>
+  </tr>
+  
+  <tr *ngFor="let data of componentdatas">
+    <td><button mat-raised-button (click)="GotoEdit('component',data.position)" color="primary"> Edit
+      <mat-icon>edit</mat-icon>
+    </button></td>
+    
+    <td class="short">{{data.position}}</td>
+    <td>{{data.class}}</td>
+    <td>{{data.selector}}</td>
+    <td class="ewide">{{data.description}}</td>
+    <td class="wide">{{data.input}}</td>
+    <td class="wide">{{data.output}}</td>
+  </tr>
+  <tr *ngFor="let data of servicedatas">
+    <td><button mat-raised-button (click)="GotoEdit('service',data.position)" color="primary"> Edit
+      <mat-icon>edit</mat-icon>
+    </button></td>
+    <td class="short">{{data.position}}</td>
+    <td>{{data.class}}</td>
+    <td class="ewide">{{data.description}}</td>
+    <td class="ewide">{{data.methods}}</td>
+  </tr>
+  <tr *ngFor="let data of datatypedatas">
+    <td><button mat-raised-button (click)="GotoEdit('data',data.position)" color="primary"> Edit
+      <mat-icon>edit</mat-icon>
+    </button></td>
+    <td class="short">{{data.position}}</td>
+    <td>{{data.class}}</td>
+    <td class="ewide">{{data.description}}</td>
+    <td class="wide">{{data.data}}</td>
+  </tr>
+  <tr *ngFor="let data of pagedatas">
+    <td><button mat-raised-button (click)="GotoEdit('page',data.position)" color="primary"> Edit
+      <mat-icon>edit</mat-icon>
+    </button></td>
+    <td class="short">{{data.position}}</td>
+    <td>{{data.class}}</td>
+    <td class="ewide">{{data.description}}</td>
+    <td class="wide">{{data.selector}}</td>
+    <td class="wide">{{data.routeselector}}</td>
+    <td class="wide">{{data.params}}</td>
+  </tr>
+</table>

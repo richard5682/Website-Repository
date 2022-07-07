@@ -1,0 +1,14 @@
+<div class="wrapper">
+  <div class="preview">
+    <img [src]="value">
+  </div>
+  <div class="right">
+    <input (change)="fileuploaded($event)" [multiple]="false" type="file" accept="image/*">
+    <p>FileSize : {{filesize? filesize:'0'}}KB</p>
+    <p>Width : {{width? width:'0'}}px</p>
+    <p>Height : {{height? height:'0'}}py</p>
+  </div>
+  <div *ngIf="required" class="hint">
+    <p>REQUIRED</p>
+  </div>
+</div>

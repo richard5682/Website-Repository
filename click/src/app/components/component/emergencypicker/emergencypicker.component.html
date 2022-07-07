@@ -1,0 +1,11 @@
+<div class="wrapper">
+  <div class="container">
+    <div (click)="changeValue(emergency)" *ngFor="let emergency of emergency_category" [class]="value==emergency? 'category_picked':'category'">
+      <div class="thumbnail">
+        <img [src]="subcat.EmergencyPicture[emergency]">
+      </div>
+      
+      <p>{{emergency}}</p>
+    </div>
+  </div>
+</div>

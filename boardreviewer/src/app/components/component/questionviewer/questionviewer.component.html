@@ -1,0 +1,25 @@
+<div class="wrapper">
+  <div class="question">
+     <div class="info">
+         <div class="infocontainer small">
+             <div class="edit">
+                 <div (click)="editQuestion()" class="editbutton">
+                    <mat-icon>edit</mat-icon>
+                 </div>
+              
+                <h2>{{question.id}}</h2>
+             </div>
+            
+         </div>
+         <div class="infocontainer swide">
+            <h2>{{question.question}}</h2>
+         </div>
+         <div class="infocontainer wide">
+            <h2>{{question.answer}}</h2>
+        </div>
+        <div class="infocontainer wide">
+            <h2>{{question.name}}</h2>
+        </div>
+     </div> 
+  </div>
+</div>

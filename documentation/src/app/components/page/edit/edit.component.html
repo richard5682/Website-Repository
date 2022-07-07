@@ -1,0 +1,58 @@
+<div class="wrapper">
+  <h1>Edit {{type}}</h1>
+  <div *ngIf="type=='component'" class="container">
+    <label>Class</label><br>
+    <input #c_class type=text value={{component.class}}><br>
+    <label>Selector</label><br>
+    <input #c_selector type=text value={{component.selector}}><br>
+    <label>Description</label><br>
+    <textarea class="big" #c_desc type=text>{{component.description}}</textarea><br>
+    <label>Input</label><br>
+    <textarea class="med" #c_input type=text>{{component.input}}</textarea><br>
+    <label>Output</label><br>
+    <textarea class="med" #c_output type=text>{{component.output}}</textarea><br>
+    <button mat-raised-button (click)="router.navigate(['homepage'])">Back</button>
+    <button mat-raised-button (click)="
+    editComponent(c_class.value,c_selector.value,c_desc.value,c_input.value,c_output.value)">Submit</button>
+  </div>
+  <div *ngIf="type=='service'" class="container">
+    <label>Class</label><br>
+    <input #s_class type=text value={{service.class}}><br>
+    <label>Description</label><br>
+    <textarea class="big" #s_desc type=text>{{service.description}}</textarea><br>
+    <label>Methods</label><br>
+    <textarea class="med" #s_method type=text>{{service.methods}}</textarea><br>
+    <button mat-raised-button (click)="router.navigate(['homepage'])">Back</button>
+    <button mat-raised-button (click)="
+    editService(s_class.value,s_desc.value,s_method.value)">Submit</button>
+   
+  </div>
+  <div *ngIf="type=='page'" class="container">
+    <label>Class</label><br>
+    <input #p_class type=text value={{page.class}}><br>
+    <label>Description</label><br>
+    <textarea class="big" #p_desc type=text>{{page.description}}</textarea><br>
+    <label>Selector</label><br>
+    <textarea class="med" #p_selector type=text>{{page.selector}}</textarea><br>
+    <label>RouteSelector</label><br>
+    <textarea class="med" #p_routeselector type=text>{{page.routeselector}}</textarea><br>
+    <label>Params</label><br>
+    <textarea class="med" #p_params type=text>{{page.params}}</textarea><br>
+    <button mat-raised-button (click)="router.navigate(['homepage'])">Back</button>
+    <button mat-raised-button (click)="
+    editPage(p_class.value,p_desc.value,p_selector.value,p_routeselector.value,p_params.value)">Submit</button>
+  </div>
+  <div *ngIf="type=='data'" class="container">
+    <label>Class</label><br>
+    <input #d_class type=text value={{data.class}}><br>
+    <label>Description</label><br>
+    <textarea class="big" #d_desc type=text>{{data.description}}</textarea><br>
+    <label>Data</label><br>
+    <textarea class="med" #d_data type=text>{{data.data}}</textarea><br>
+    <button mat-raised-button (click)="router.navigate(['homepage'])">Back</button>
+    <button mat-raised-button (click)="
+    editData(d_class.value,d_desc.value,d_data.value)">Submit</button>
+    
+  </div>
+  
+</div>

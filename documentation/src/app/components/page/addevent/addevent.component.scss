@@ -1,0 +1,33 @@
+.wrapper{
+    margin-left:2em;
+    margin-right:2em;
+    
+
+    display:flex;
+    flex-direction: column;
+    background-color: rgba(76, 0, 130, 0.116);
+    h1{
+        margin:0;
+        background-color: rgba(73, 60, 160, 0.678);
+        color:rgb(255, 255, 255);
+        padding:0.2em;
+    }
+    .container{
+        margin-left:1em;
+    }
+    button{
+        width:fit-content;
+        height:fit-content;
+    }
+    label{
+        margin:0.2em;
+    }
+    .big{
+        width:30em;
+        height:8em;
+    }
+    .med{
+        width:20em;
+        height:8em;
+    }
+}

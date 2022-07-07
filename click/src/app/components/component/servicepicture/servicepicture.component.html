@@ -1,0 +1,21 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="button">
+      <div class="prev">
+        <button (click)="prevbutton($event)" mat-icon-button>
+          <mat-icon>navigate_before</mat-icon>
+        </button>
+      </div>
+      <div class="next">
+        <button (click)="nextbutton()" mat-icon-button>
+          <mat-icon>navigate_next</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="slidercontainer">
+      <div *ngFor="let url of picturesURL" class="picture">
+        <img  [src]="url">
+      </div>
+    </div>
+  </div>
+</div>

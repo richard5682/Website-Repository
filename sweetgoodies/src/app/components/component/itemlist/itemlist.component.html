@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <div  *ngIf="!admin" class="title">
+    <h1>PRODUCTS</h1>
+  </div>
+  <div  class="category">
+    <div (click)="setItem(item)" *ngFor="let item of items" [ngClass]="(!(chosenItem && (item.id==chosenItem.id)) || admin ? 'button':' chosen button')">
+      <h1 (click)="addProduct(item)">{{item.title}}</h1>
+      <button *ngIf="admin" (click)="deleteItem(item)" mat-icon-button class="red">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button *ngIf="admin" (click)="editItem(item)" mat-icon-button class="green">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </div>
+      <div *ngIf="admin" (click)="addItem()" class="addbutton">
+        <h1>ADD ITEM</h1>
+        <mat-icon>add</mat-icon>
+       
+      </div>
+    
+  </div>
+</div>

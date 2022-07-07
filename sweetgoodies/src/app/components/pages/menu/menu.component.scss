@@ -1,0 +1,50 @@
+.wrapper{
+    width: 80%;
+    height: 100%;
+    min-height: 100vh;
+    background-image: url(../../../../assets/bricktexture.jpg);
+    background-repeat: no-repeat;
+    margin: auto;
+    background-size: cover;
+    box-shadow: 0 5px 5px 0 black;
+    .header{
+        position: relative;
+        top:5em;
+        h1{
+            text-align: center;
+            width: fit-content;
+            padding-left: 0.5em;
+            padding-left: 1.5em;
+            padding-right:1em;
+            margin:auto;
+            border-radius: 50vh;
+            font-size: 5em;
+            background-color: white;
+            box-shadow: 0 5px 5px 0 black;
+            letter-spacing: 0.5em;
+            font-family: 'logo';
+        }
+    }
+    .menu{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        img{
+            margin-top:3em;
+            width: 90%;
+            border-radius: 1em;
+            border:solid rgb(255, 255, 255) 5px;
+            box-shadow: 0 5px 5px 0 black;
+            @media screen AND(min-width:768px) {
+                width: 80%;
+            }
+            @media screen AND(min-width:1440px) {
+                width: 70%;
+            }
+        }
+    }
+    @media screen AND(max-width:600px) {
+        width: 100%;
+    }
+    
+}

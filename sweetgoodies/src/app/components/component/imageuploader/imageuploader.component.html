@@ -1,0 +1,6 @@
+<div class="wrapper">
+  <div class="preview">
+    <img [src]="data? data:fetch.getLink('0.PNG','products')">
+  </div>
+  <input type="file" accept="image/*" (change)="uploadImage($event)">
+</div>

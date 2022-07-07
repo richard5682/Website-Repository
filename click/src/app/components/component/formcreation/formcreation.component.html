@@ -1,0 +1,89 @@
+<div class="wrapper">
+  <div class="partscontainer">
+    <button mat-raised-button (click)="addText()">ADD TEXTBOX</button>
+    <button mat-raised-button (click)="addSelector()">ADD SELECTOR</button>
+  </div>
+  <div class="editor">
+    <div class="longcontainer">
+      <h2>{{form? form.subcategory+" Service":"Category"}}</h2>
+
+      <div *ngFor="let form of formcomponents" class="container">
+
+        <div *ngIf="form.textbox != undefined" class="formcontainer">
+          <div class="actual">
+            <p>{{form.id+1+") "+form.textbox.desc}}</p>
+            <mat-form-field appearance="outline">
+              <mat-label>{{form.textbox.label}}</mat-label>
+              <input matInput autocomplete="off">
+            </mat-form-field>
+          </div>
+          <div class="edit">
+            <div class="left">
+              <mat-form-field appearance="outline">
+                <mat-label>Question</mat-label>
+                <input matInput #input1 [value]="form.textbox.desc" (change)="editTextbox(form.id,input1.value,input2.value)"  autocomplete="off">
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Label</mat-label>
+                  <input matInput #input2 [value]="form.textbox.label" (change)="editTextbox(form.id,input1.value,input2.value)"  autocomplete="off">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="buttons">
+            <button (click)="deletecomponent(form.id)" mat-icon-button>
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </div>
+        </div>
+
+
+        <div *ngIf="form.select != undefined" class="formcontainer">
+          <div class="actual">
+            <p>{{form.id+1+") "+form.select.desc}}</p>
+            <mat-form-field appearance="outline">
+              <mat-label>{{form.select.label}}</mat-label>
+              <mat-select [(value)]="values[form.id]">
+                <mat-option *ngFor="let option of form.select.options" [value]="option.value">
+                  {{option.value}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <div class="edit">
+              <div class="left">
+                <mat-form-field appearance="outline">
+                  <mat-label>Question</mat-label>
+                  <input matInput #question [value]="form.select.desc" (change)="editSelector(form.id,question.value,label.value,null,null)"  autocomplete="off">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                  <mat-label>Label</mat-label>
+                  <input matInput #label [value]="form.select.label" (change)="editSelector(form.id,question.value,label.value,null,null)"  autocomplete="off">
+                </mat-form-field>
+              </div>
+              <div class="right">
+                <mat-form-field *ngFor="let option of form.select.options" appearance="outline">
+                <mat-label>Choices</mat-label>
+                <input matInput #input3 [value]="option.value" (change)="editSelector(form.id,question.value,label.value,input3.value,option.index)" autocomplete="off">
+                </mat-form-field>
+               <button mat-raised-button (click)="addSelectorChoice(form.id)">ADD</button>
+              </div>
+            </div>
+          </div>
+          <div class="buttons">
+            <button (click)="deletecomponent(form.id)" mat-icon-button>
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </div> 
+        </div>
+
+      </div>
+    </div>
+    <div class="footer">
+      <button  (click)="submitform()" mat-raised-button>
+        Submit
+      </button>
+      <button  mat-raised-button>
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>

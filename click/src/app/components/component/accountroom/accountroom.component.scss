@@ -1,0 +1,62 @@
+.wrapper{
+    width:100%;
+    cursor:pointer;
+    padding:1em;
+    border-radius: 1em;
+    p,img{
+        margin:0;
+        font-weight: bolder;
+        letter-spacing: 0.05em;
+        
+    }
+    .left{
+        text-align: left;
+    }
+    .service{
+        border-top:solid black 1px;
+    }
+    text-align: center;
+    .top{
+        width:100%;
+        display:flex;
+        .rightinfo{
+            display:flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: left;
+            p{
+                padding-left:1em;
+                font-size: 1.5em;
+            }
+        }
+        .imagecontainer{
+            width:3.5em;
+            max-width: 3.5em;
+            text-align: center;
+            img{
+                box-shadow: 0 5px 5px 0 rgba(71, 71, 71, 0.541);
+                width:3.5em;
+                height:3.5em;
+                border-radius: 50%;
+            }
+            
+        }
+        .pending{
+            color:orangered;
+        }
+        .priceaccepted{
+            color:rgb(98, 240, 117);
+        }
+        .bookset{
+            color:green;
+        }
+        .lastmessage{
+            font-size: 0.8em;
+            color:rgba(92, 92, 92, 0.733);
+        }
+    }
+    .booking{
+        position: relative;
+        left:1em;
+    }
+}

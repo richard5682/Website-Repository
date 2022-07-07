@@ -1,0 +1,29 @@
+.wrapper{
+    p{
+        margin:0.2em;
+    }
+    .bold{
+        font-weight: bold;
+    }
+    height:100%;
+    width:100%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.39);
+    border-radius:1em;
+    overflow: hidden;
+    .userview{
+        width:100%;
+        background-color: rgb(255, 133, 20);
+        padding:1em;
+        color:white;
+        .accountview{
+            width: 10em;
+            max-height: 3em;
+        } 
+    }
+    .comment{
+        color:black;
+        padding:1em;
+        
+    }
+}

@@ -1,0 +1,34 @@
+<div class="wrapper">
+  <div *ngFor="let vyear of years" class="yearwrapper" style="bottom: 0px;">
+      <h3>{{vyear.year}}</h3>
+      <div class="months">
+        <div *ngFor="let vmonth of vyear.months" style="bottom: 0px;" class="monthwrapper">
+          <h3>{{vmonth.days[0].date | date:'MMMM'}}</h3>
+          <div class="dayofweek">
+            <p>SUN</p>
+            <p>MON</p>
+            <p>TUE</p>
+            <p>WED</p>
+            <p>THU</p>
+            <p>FRI</p>
+            <p>SAT</p>
+          </div>
+          <div class="days">
+            <div *ngFor="let filler of vmonth.filler" class="daywrapper">
+            </div>
+            <div (click)="emitDate(vday.date)" *ngFor="let vday of vmonth.days" [style.backgroundColor]="vday.backcolor" [style.color]="vday.color" class="daywrapper">
+              <p>{{vday.date.getDate()}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="buttons">
+      <button (click)="slideup()" mat-icon-button class="up">
+        <mat-icon>expand_less</mat-icon>
+      </button>
+      <button (click)="slidedown()" mat-icon-button class="down">
+        <mat-icon>expand_more</mat-icon>
+      </button>
+    </div>
+</div>

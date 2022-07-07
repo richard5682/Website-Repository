@@ -1,0 +1,19 @@
+<div class="wrapper">
+  <div [class]="class">
+    <h1>PRICE SET</h1>
+    <h2><span>&#8369;</span>{{value}}</h2>
+    <p>{{class}}</p>
+  </div>
+  <div *ngIf="(class!='cancelled' && class!='rejected')"class="buttons">
+    <button (click)="accepted.emit()" *ngIf="isUser && class!='accepted'" [style.backgroundColor]="'green'" mat-icon-button>
+      <mat-icon>
+        check
+      </mat-icon>
+    </button>
+    <button (click)="decline.emit(isUser)" [style.backgroundColor]="'red'" mat-icon-button>
+      <mat-icon>
+        cancel
+      </mat-icon>
+    </button>
+  </div>
+</div>

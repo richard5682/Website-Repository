@@ -1,0 +1,19 @@
+<div [class]="shadow ? 'wrappershadow':'wrapper'">
+  <div [style.backgroundColor]="titlecolor" *ngIf="title" class="title">
+      <h2>{{title}}</h2>
+  </div>
+  <div class="container">
+    <div [class]="horizontal ? 'scrollcontainerhorizontal':'scrollcontainervertical'">
+      <div *ngIf="!isEmergency" class="content">
+        <div  *ngFor="let service of services" class="serviceviews">
+          <app-serviceview (clickedService)="clickedService.emit($event)" [redirect]="redirect" [iconColor]="iconColor" [icon]="icon" [service]="service"></app-serviceview>
+        </div>
+      </div>
+      <div *ngIf="isEmergency" class="content">
+        <div  *ngFor="let emergency of emergencyservices" class="serviceviews">
+          <app-emergencyview [iconColor]="iconColor" [icon]="icon" [service]="emergency"></app-emergencyview>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

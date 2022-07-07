@@ -1,0 +1,24 @@
+<div class="wrapper">
+  <div class="container">
+    <label>DATE</label><br>
+    <input #ndate [value]="date" [disabled]="true"><br>
+    <label>MONTH</label><br>
+    <input #nmonth [value]="month" [disabled]="true"><br>
+    <label>ICON</label><br>
+    <input #nicon [value]="icon"><br>
+    <label>COLOR</label><br>
+    <input #ncolor [value]="color"><br>
+    <label >BACKCOLOR</label><br>
+    <input #nbackcolor [value]="backcolor"><br>
+    <label>TEXT</label><br>
+    <input #ntext [value]="text"><br>
+    <br>
+    <button mat-raised-button
+    (click)="routerp.navigate(['homepage'])">BACK</button>
+    <button *ngIf="type=='add'" mat-raised-button
+    (click)="addEvent(ndate.value,nmonth.value,nicon.value,ncolor.value,nbackcolor.value,ntext.value)">ADD EVENT</button>
+    <button *ngIf="type=='edit'" mat-raised-button
+    (click)="editEvent(ndate.value,nmonth.value,nicon.value,ncolor.value,nbackcolor.value,ntext.value)">EDIT EVENT</button>
+  </div>
+  
+</div>

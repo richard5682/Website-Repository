@@ -1,0 +1,8 @@
+<div class="wrapper">
+  <div class="topcontainer">
+    <app-emergencyquerier (submit)="QueryEmergencyService($event)"></app-emergencyquerier>
+  </div>
+  <div *ngIf="emergency_services" class="bottomcontainer">
+    <app-servicelist [titlecolor]="'black'" title="NEAR SERVICES" [emergencyservices]="emergency_services"></app-servicelist>
+  </div>
+</div>

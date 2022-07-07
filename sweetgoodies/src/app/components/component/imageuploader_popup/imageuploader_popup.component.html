@@ -1,0 +1,25 @@
+<div #main class="main">
+  <div class="wrapper">
+      <div class="form">
+          <div class="header">
+            <h1>UPLOAD IMAGE</h1>
+            <div class="close">
+              <button (click)="cancel()" mat-icon-button>
+                <mat-icon>cancel</mat-icon>
+              </button>
+            </div>
+          </div>
+          <div class="uploader">
+            <app-imageuploader #image (imagechange)="imagechange($event)"></app-imageuploader>
+          </div>
+          <div [ngClass]="data!=undefined ? 'footer':'disable'">
+            <button [disabled]="data == undefined" (click)="check()" mat-icon-button>
+              <mat-icon>check</mat-icon>
+            </button>
+          </div>
+      </div>
+  </div>
+  <div class="shadow">
+
+  </div>
+</div>

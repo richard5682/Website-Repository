@@ -1,0 +1,43 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="topcontainer">
+      <div class="info">
+        <h2>ACTIVE BOOKING<br><h1>{{active_bookings?active_bookings.length:'_ _'}}</h1></h2><br>
+        <h2>PENDING BOOKING<br><h1>{{pending_bookings?pending_bookings.length:'_ _'}}</h1></h2><br>
+        <h2>PASTDUE BOOKING<br><h1>{{past_bookings?past_bookings.length:'_ _'}}</h1></h2><br>
+      </div>
+      <div class="calendar">
+        <app-calendar [markdate]="markdate"></app-calendar>
+      </div>
+    </div>
+    <mat-tab-group>
+      <mat-tab label="Active">
+        <h1>ACTIVE BOOKINGS</h1>
+        <div *ngIf="active_bookings && active_bookings.length > 0" class="bookingcontainer">
+          <app-bookinghistory [bookings]="active_bookings"></app-bookinghistory>
+        </div> 
+        <div *ngIf="!active_bookings || active_bookings.length == 0" class="icon">
+          <app-icontemplate [icon]="'bookmarks'" [color]="'grey'" text="NO ACTIVE BOOKINGS"></app-icontemplate>
+        </div>
+      </mat-tab>
+      <mat-tab label="Pending">
+        <h1>PENDING BOOKINGS</h1>
+        <div *ngIf="pending_bookings && pending_bookings.length > 0" class="bookingcontainer">
+          <app-bookinghistory [bookings]="pending_bookings"></app-bookinghistory>
+        </div> 
+        <div *ngIf="!pending_bookings || pending_bookings.length == 0" class="icon">
+          <app-icontemplate [icon]="'bookmarks'" [color]="'grey'" text="NO PENDING BOOKINGS"></app-icontemplate>
+        </div>
+      </mat-tab>
+      <mat-tab label="Past Due">
+        <h1>PAST DUE BOOKINGS</h1>
+        <div *ngIf="past_bookings && past_bookings.length > 0" class="bookingcontainer">
+          <app-bookinghistory [bookings]="past_bookings"></app-bookinghistory>
+        </div> 
+        <div *ngIf="!past_bookings || past_bookings.length == 0" class="icon">
+          <app-icontemplate [icon]="'bookmarks'" [color]="'grey'" text="NO PAST BOOKINGS"></app-icontemplate>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

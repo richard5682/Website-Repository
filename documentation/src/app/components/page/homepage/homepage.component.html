@@ -1,0 +1,111 @@
+<div class="wrapper">
+  <mat-tab-group>
+    <mat-tab label="Schedule">
+      <div class="container">
+        <h2>SCHEDULE</h2>
+        <mat-tab-group>
+          <mat-tab label="March">
+            <h1>MARCH</h1>
+            <app-calendar [month]="month[0]"></app-calendar>
+          </mat-tab>
+          <mat-tab label="April">
+            <h1>APRIL</h1>
+            <app-calendar [month]="month[1]"></app-calendar>
+          </mat-tab>
+          <mat-tab label="MAY">
+            <h1>MAY</h1>
+            <app-calendar [month]="month[2]"></app-calendar>
+          </mat-tab>
+          <mat-tab label="JUNE">
+            <h1>MAY</h1>
+            <app-calendar [month]="month[3]"></app-calendar>
+          </mat-tab>
+          <mat-tab label="JULY">
+            <h1>MAY</h1>
+            <app-calendar [month]="month[4]"></app-calendar>
+          </mat-tab>
+          <mat-tab label="AUGUST">
+            <h1>MAY</h1>
+            <app-calendar [month]="month[5]"></app-calendar>
+          </mat-tab>
+        </mat-tab-group>
+        
+      </div>
+    </mat-tab>
+    <mat-tab label="Component">
+      <div class="container">
+        <div class="topinfo">
+          <h1>Component</h1>
+          <p>Component Information, you can find all the components and its information in this tab.</p><br>
+          <p>class - the name of the Class.</p><br>
+          <p>selector - the tag you need to use this in HTML.</p><br> 
+          <p>description - well the description. </p><br>
+          <p>input - the input and its dataType</p><br>
+          <p>output - the event it emits.</p><br>
+        </div>
+        <button mat-raised-button (click)="GotoAdd('component')" color="primary"> Add
+          <mat-icon>add</mat-icon>
+        </button>
+        <div class="table">
+          <app-tablelist [componentdatas]="component" [keys]='componentkey'></app-tablelist>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Services">
+      <div class="container">
+        <div class="topinfo">
+          <h1>Services</h1>
+          <p>
+            Services Information and its function
+          </p><br>
+          <p>class - the name of the Class.</p><br>
+          <p>description - well the description. </p><br>
+          <p>method - the method the service have.</p><br>
+        </div>
+        <button mat-raised-button (click)="GotoAdd('service')" color="primary"> Add
+          <mat-icon>add</mat-icon>
+        </button>
+        <div class="table">
+          <app-tablelist [servicedatas]="service" [keys]='servicekey'></app-tablelist>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Pages">
+      <div class="container">
+        <div class="topinfo">
+          <h1>Pages</h1>
+          <p>Pages Information here you can find different information of the page</p><br>
+          <p>class - the name of the Class.</p><br>
+          <p>selector - the tag you need to use this in HTML.</p><br> 
+          <p>description - well the description. </p><br>
+          <p>selector - the selector to be use in HTML</p><br>
+          <p>routeselector - its route name.</p><br>
+          <p>params - parameter of the page URL.</p><br>
+        </div>
+        <button mat-raised-button (click)="GotoAdd('page')" color="primary"> Add
+          <mat-icon>add</mat-icon>
+        </button>
+        <div class="table">
+          <app-tablelist [pagedatas]="page" [keys]='pagekey'></app-tablelist>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="DataType">
+      <div class="container">
+        <div class="topinfo">
+          <h1>DataType</h1>
+          <p>Datatype Information - Here you can find datatype we use, you can find the datatype you need here to communicate with other components</p><br>
+          <p>class - the name of the Class.</p><br> 
+          <p>description - well the description. </p><br>
+          <p>data - the selector to be use in HTML</p><br>
+        </div>
+        <button mat-raised-button (click)="GotoAdd('data')" color="primary"> Add
+          <mat-icon>add</mat-icon>
+        </button>
+        <div class="table">
+          <app-tablelist [datatypedatas]="datatype" [keys]='datakey'></app-tablelist>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

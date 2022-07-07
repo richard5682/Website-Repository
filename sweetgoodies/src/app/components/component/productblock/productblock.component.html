@@ -1,0 +1,34 @@
+<div class="wrapper">
+  <div class="innerwrapper">
+    <div *ngIf="admin" class="editor">
+      <button mat-icon-button class="red">
+        <mat-icon (click)="deleteProduct()">delete</mat-icon>
+      </button>
+      <button (click)="edit()" mat-icon-button class="green">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </div>
+    <div class="productpicture">
+      <img *ngIf="this.product && !this.product.picture_data " [src]="this.fetch.getLink(this.product.picture_link,'products')">
+      <img *ngIf="!this.product && !this.product.picture_data " [src]="'assets/0.PNG'">
+      <img *ngIf="this.product.picture_data " [src]="this.product.picture_data">
+      <div (click)="loader.redirect('https://www.messenger.com/t/331558548299034')" *ngIf="!admin" class="facebooklink">
+        <img src="assets/messenger.png">
+        <h1>ORDER NOW</h1>
+      </div>
+    </div>
+    <div *ngIf="product" class="productinfo">
+      <div class="texts">
+        <p>{{product.description}}</p>
+        <h1>{{product.title}}</h1>
+        <h2>{{product.price}} PHP</h2>
+      </div>
+      <div class="extra">
+        <p></p>
+        <div *ngIf="product.extra" class="bestselling">
+          <h1>{{product.extra}}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

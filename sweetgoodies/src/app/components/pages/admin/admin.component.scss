@@ -1,0 +1,68 @@
+.wrapper{
+    width: 90%;
+    max-width: 80em;
+    margin:auto;
+    min-height: 100vh;
+    height: fit-content;
+    margin-top:10em;
+    background-color:rgb(255, 255, 255);
+    .section{
+        height: fit-content;
+       margin-bottom: 2em;
+       
+        .title{
+            h1{
+                background-color:black;
+                color:white;
+                font-size: 3em;
+                text-align: center;
+            }
+        }
+        .scroll{
+            max-height: 40em;
+            overflow-y: scroll;
+        }
+        .buttons{
+            display:flex;
+            justify-content: space-evenly;
+            button{
+                background-color: purple;
+                color:white;
+                width: 12em;
+                @media screen AND(max-width:3000px) {
+                    font-size: 3em;
+                    
+                }
+                @media screen AND(max-width:625px) {
+                    font-size: 2em;
+                    
+                }
+                @media screen AND(max-width:510px) {
+                    font-size: 1.5em;
+                    
+                }
+                @media screen AND(max-width:450px) {
+                    font-size: 1.3em;
+                    
+                }
+                @media screen AND(max-width:390px) {
+                    font-size: 1em;
+                    
+                }
+            }
+        }
+        .billboardlist{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            .billboard{
+                margin:1em;
+                height: 25em;
+            }
+        }
+    }
+    @media screen AND(max-width:625px) {
+        width: 100%;
+        
+    }
+}

@@ -1,0 +1,67 @@
+<div class="wrapper">
+  <div class="section">
+    <div class="title">
+        <h1>ITEM SECTION</h1>
+    </div>
+    <div class="scroll">
+        <div class="itemlist">
+            <app-itemlist #itemlist [admin]="true" [items]="Items"></app-itemlist>
+        </div>
+    </div>
+    
+      
+  </div>
+  <div class="section">
+    <div class="title">
+        <h1>PRODUCT SECTION</h1>
+        <div class="scroll">
+            <div class="productlist">
+                <app-productlist [admin]="true" [products]="Products"></app-productlist>
+              </div>
+        </div>
+        
+    </div>
+  </div>
+  <div class="section">
+    <div class="title">
+        <h1>MENU SECTION</h1>
+    </div>
+    <div class="buttons">
+        <button (click)="changeMenu()" mat-raised-button>CHANGE MENU</button>
+    </div>
+  </div>
+  <div class="section">
+    <div class="title">
+        <h1>BILLBOARD SECTION</h1>
+    </div>
+    <div class="billboardlist">
+      <div class="billboard">
+        <app-billboardeditor [filename]="'0'"></app-billboardeditor>
+      </div>
+      <div class="billboard">
+        <app-billboardeditor [filename]="'1'"></app-billboardeditor>
+      </div>
+      <div class="billboard">
+        <app-billboardeditor [filename]="'2'"></app-billboardeditor>
+      </div>
+      <div class="billboard">
+        <app-billboardeditor [filename]="'3'"></app-billboardeditor>
+      </div>
+      <div class="billboard">
+        <app-billboardeditor [filename]="'4'"></app-billboardeditor>
+      </div>
+      <div class="billboard">
+        <app-billboardeditor [filename]="'5'"></app-billboardeditor>
+      </div>
+      <div class="billboard">
+        <app-billboardeditor [filename]="'6'"></app-billboardeditor>
+      </div>
+      <div class="billboard">
+        <app-billboardeditor [filename]="'7'"></app-billboardeditor>
+      </div>
+      <div class="billboard">
+        <app-billboardeditor [filename]="'8'"></app-billboardeditor>
+      </div>
+    </div>
+  </div>
+</div>

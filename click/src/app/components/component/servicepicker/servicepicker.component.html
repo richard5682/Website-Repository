@@ -1,0 +1,33 @@
+<div class="wrapper">
+
+  <div class="Category">
+    <mat-form-field appearance="fill">
+      <mat-label>Service Categories</mat-label>
+      <mat-select (selectionChange)="clearchips()" [(value)]="picked_category">
+        <mat-option *ngFor="let category of this.subcat.Category" [value]="category.value">
+          {{category.value}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="Sub-Categories">
+    <mat-form-field appearance="fill">
+      <mat-label>Sub Categories</mat-label>
+      <mat-select (selectionChange)="addSubCategory(picked_sub)" [disabled]="picked_category==null" [(value)]="picked_sub">
+        <mat-option *ngFor="let subcategory of this.subcat.getSubCategory(picked_category)" [value]="subcategory">
+          {{subcategory}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="picksubcategories">
+    <div *ngFor="let value of picked_subcategory" class="chips">
+      <div class="content">
+        <p>{{value}}</p>
+      </div>
+      <button (click)="removesubcategory(value)" mat-icon-button>
+        <mat-icon>clear</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

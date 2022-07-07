@@ -1,0 +1,402 @@
+.wrapper{
+    width: 100%;
+    height: 100%;
+    margin-top:5em;
+    @media screen AND(max-width:768px) {
+        margin-top: 4em;
+    }
+    @media screen AND(max-width:580px) {
+        margin-top: 3em;
+    }
+    @media screen AND(max-width:425px) {
+        margin-top: 2em;
+    }
+    .facts{
+        width:100%;
+        display:flex;
+        justify-content: space-evenly;
+        .factbox{
+            width:20em;
+            height:20em;
+        }
+    }
+    .scores{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding:1em;
+        .mainscore{
+            margin:auto;
+            width: 20em;
+            height: 20em;
+            font-size: 0.8em;
+        }
+        .specificscore{
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            .score{
+                width: 15em;
+                height: 15em;
+                font-size: 0.65em;
+            }
+        }
+    }
+    .noscore{
+        min-height: 20em;
+        
+        h1{
+            font-weight: 100;
+            margin-top:3em;
+            text-align: center;
+            color:white;
+            font-family:'Courier New';
+        }
+    }
+    .card{
+        display: flex;
+        flex-direction: column;
+        margin-top:5em;
+        background-color: rgb(39, 39, 39);
+        border-radius: 1em;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 5px 5px 0 black; 
+        font-size: 1em;
+        @media screen AND(max-width:1024px) {
+            font-size: 0.8em;
+        }
+        @media screen AND(max-width:768px) {
+            font-size: 0.7em;
+        }
+        @media screen AND(max-width:580px) {
+            font-size: 0.6em;
+        }
+        @media screen AND(max-width:425px) {
+            font-size: 0.5em;
+        }
+        .references{
+            display:flex;
+            .reference{
+                cursor: pointer;
+                padding:1em;
+                h1{
+                    color:white;
+                }
+                img{
+                    height:4em;
+                }
+            }
+        }
+        
+        .cardtitle{
+            h1{
+                color:white;
+                font-family:'Courier New';
+                font-size:4em;
+                text-align: center;
+                margin:0;
+                margin-top:0.2em;
+                font-weight: 400;
+            }
+        }
+    }
+    .card .content{
+        height: 40em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .button{
+            background-color: gray;
+            opacity: 0.6;
+            width: 5em;
+            height: 5em;
+            color:white;
+            border-radius: 1em;
+            z-index: 1;
+            cursor:pointer;
+            transition: 0.3s;
+            top:45%;
+            mat-icon{
+                font-size: 5em;
+               
+            }
+        }
+        .button:hover{
+            opacity: 1;
+        }
+       .prev{
+        position: absolute;
+       
+       
+       }
+       .next{
+        position: absolute;
+        right:0;
+       }
+    }
+    .card .test{
+        z-index: 2;
+        position: absolute;
+        top:0;
+        width: 100%;
+        height: 100%;
+    }
+    .card .actions{ 
+        display: flex;
+        position: relative;
+        top:-2em;
+        left:0;
+        width: fit-content;
+        transition: 0.5s;
+        .action{
+            width: 30em;
+            text-align: center;
+            background-color: black;
+            margin-left: 2em;
+            border-radius: 2em;
+            max-height: 20em;
+            font-size: 0.8em;
+            mat-icon{
+                color:white;
+                font-size: 20em;
+                position: relative;
+                left:-0.45em;
+                transition: 1s;
+            }
+            h1{
+                font-family: 'Courier New';
+                color:white;
+                font-weight: 800;
+                transition: 1s;
+            }
+            
+        }
+        .action:hover{
+            cursor: pointer;
+           
+            h1{
+                font-size: 2.5em;
+                color:rgb(255, 255, 97);
+           
+            }
+            mat-icon{
+                color:rgb(255, 255, 97);
+            }
+        }
+    }
+    .card .question{
+        h1{
+            font-family: 'Courier New';
+            text-align: center;
+            color:white;
+            font-size:3em;
+        }
+    }
+        
+    .greeter{
+        z-index: 20;
+        position: fixed;
+        display:none;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.438);
+        .greetcard{
+            position: relative;
+            top:calc(50% - 25em);
+            left:calc(50% - 22em);
+            font-size: 1em;
+            @media screen AND(max-width:768px) {
+                font-size: 0.9em;
+                top:calc(50% - 26em);
+            }
+            @media screen AND(max-width:650px) {
+                font-size: 0.8em;
+            }
+            @media screen AND(max-width:550px) {
+                font-size: 0.7em;
+                top:calc(50% - 28em);
+            }
+            @media screen AND(max-width:480px) {
+                font-size: 0.6em;
+                top:calc(50% - 29em);
+            }
+            @media screen AND(max-width:400px) {
+                font-size: 0.5em;
+                top:calc(50% - 30em);
+            }
+            @media screen AND(max-width:340px) {
+                font-size: 0.4em;
+                top:calc(50% - 31em);
+            }
+            .mascot{
+                position: relative;
+                mat-icon{
+                    font-size: 4em;
+                }
+                .head{
+                    z-index: 3;
+                    position: relative;
+                    font-size: 4em;
+                    color:rgb(116, 172, 255);
+                    
+                }
+                .headback{
+                    z-index: 2;
+                    width: 8em;
+                    height: 8em;
+                    border-radius: 4em;
+                    background-color: rgb(255, 66, 66);
+                    position: absolute;
+                    top:4em;
+                    left:4em;
+                }
+                
+                .body{
+                    position: absolute;
+                    width: 8em;
+                    height: 16em;
+                    top:13em;
+                    left:4em;
+                    border-radius: 4em;
+                    background-color:rgb(255, 66, 66);
+                }
+                .hand{
+                    position: absolute;
+                    top:13em;
+                    left:2em;
+                    transform: rotate(-30deg);
+                    width: 4em;
+                    height: 4em;
+                    background-color:rgb(228, 62, 62);
+                    border-radius: 2em;
+                    .holding{
+                        position: relative;
+                        top:-1em;
+                        mat-icon{
+                            color:rgb(116, 172, 255);
+                        }
+                    }
+                }
+            }
+            .dialog{
+                z-index: 5;
+                border-radius: 1em;
+                padding:1em;
+                top:4em;
+                left:15em;
+                position: absolute;
+                background-color: white;
+                width: 25em;
+                height: 8em;
+                h2{
+                    margin:0;
+                    text-align: justify;
+                    font-family:'Courier New', Courier, monospace;
+                    font-size: 1.3em;
+                }
+            }
+            .inputname{
+                position: absolute;
+                left:6em;
+                background-color: white;
+                padding:1em;
+                width: 30em;
+                height: 11em;
+                border-radius: 2em;
+                h1{
+                    text-align: center;
+                    font-family:'Courier New', Courier, monospace;
+                    margin:0;
+                }
+                .submit{
+                    border-radius: 0.5em;
+                    background-color: black;
+                    color:white;
+                    cursor: pointer;
+                }
+                .submit:hover{
+                    border-radius: 0.5em;
+                    background-color: rgb(37, 37, 37);
+                    color:white;
+                    cursor: pointer;
+                }
+                .disabled{
+                    border-radius: 0.5em;
+                    color:white;
+                    cursor: pointer;
+                    background-color: rgb(100, 100, 100);
+                }
+            }
+        }
+        .activitiesad{
+            position: relative;
+            top:calc(50% - 10em);
+            width: 100%;
+            display:flex;
+            justify-content: space-evenly;
+            font-size: 1em;
+            @media screen AND(max-width:850px) {
+                font-size: 0.9em;
+                top:calc(50% - 10em);
+            }
+            @media screen AND(max-width:760px) {
+                font-size: 0.8em;
+                top:calc(50% - 10em);
+            }
+            @media screen AND(max-width:675px) {
+                font-size: 0.6em;
+                top:calc(50% - 15em);
+            }
+            @media screen AND(max-width:505px) {
+                font-size: 0.5em;
+                top:calc(50% - 15em);
+            }
+            @media screen AND(max-width:425px) {
+                font-size: 0.45em;
+                top:calc(50% - 17em);
+            }
+            @media screen AND(max-width:380px) {
+                font-size: 0.4em;
+                top:calc(50% - 15em);
+            }
+            .activity{
+                background-color: rgb(41, 41, 41);
+                box-shadow:  0 5px 10px 0 rgba(0, 0, 0, 0.692);
+                width: 15em;
+                height: 15em;
+                border-radius: 1em;
+                padding:1em;
+                mat-icon{
+                    color:rgb(255, 255, 255);
+                    font-size:5em;
+                    position: relative;
+                    left:1em;
+                }
+                h1,p{
+                    font-family: 'Courier New', Courier, monospace;
+                }
+                h1{
+                    color:white;
+                    text-align: center;
+                    font-size: 1.5em;
+                    margin:0;
+                }
+                p{
+                    color:white;
+                    text-align: center;
+                }
+            }
+        }
+     }
+    
+}
+.unselectable{
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}

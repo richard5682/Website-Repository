@@ -1,0 +1,35 @@
+.wrapper{
+    width: 100%;
+    input{
+        height: 1.1em;
+        background: whi;
+        border-style: none;
+        border-radius: .3em;
+        width:60%;
+        margin-top:0em;
+        padding:1em;
+        font-family: Helvetica, sans-serif;
+    }
+    button{
+        margin-left: 1em;
+        border-style: none;
+        border-radius:.3em .3em .3em .3em;
+        width:15%;
+        margin-top:0em;
+        height:2em;
+        background:rgb(255, 133, 33);
+        mat-icon{
+            font-size: 3em;
+            margin-left:-2em;
+            color:white;
+        }
+    }
+    @media screen AND(max-width:640px){
+        input{
+            border-radius: 0;
+        }
+        button{
+            border-radius: 0;
+        }
+    }
+}

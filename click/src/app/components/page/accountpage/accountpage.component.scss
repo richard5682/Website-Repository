@@ -1,0 +1,27 @@
+.wrapper{
+    width: calc(100% - 4em);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 -2px 10px 0 rgb(58, 58, 58);
+    border-radius: 1em;
+    margin-top:10em;
+    .topcontainer{
+         .content{
+            height:fit-content;
+            min-height: 50em;
+            background-color: rgb(255, 255, 255);
+            margin:1em;
+            .list{
+                height: 25em;
+               
+             
+            }
+            h1{
+                background-color: black;
+                color:white;
+                text-align: center;;
+            }
+        }
+        
+    }
+    
+}

@@ -1,0 +1,99 @@
+<div class="wrapper">
+  <div class="topcontainer">
+    <div class="serviceheader">
+      <img [src]="thumbnail"/>
+    </div>
+  </div>
+  <div class="subtopcontainer">
+    <div class="serviceinfo">
+      <div class="servicename">
+        {{service ? service.title:"TITLE"}}
+        <mat-icon>verified</mat-icon><br>
+        <p>{{service ? service.description:"DESCRIPTION"}}</p>
+      </div>
+      <div class="servicefollowers">
+        {{followerscount}}
+      </div>
+      <div class="servicechat">
+        <button (click)="chatWithService()" type="button">
+          <mat-icon>message</mat-icon> 
+          Chat
+        </button>
+      </div>
+      <div class="servicefollow">
+        <button *ngIf="!isuserfollowing" type="button" (click)="followService()" value="Follow">
+          <mat-icon>person_add</mat-icon> 
+          Follow
+        </button>
+        <button *ngIf="isuserfollowing" type="button" (click)="unfollowService()" value="Unfollow">
+          <mat-icon>cancel</mat-icon> 
+          Unfollow
+        </button>
+      </div>
+    </div>
+    
+    <div class="servicepicture">
+      <app-servicepicture [serviceID]="serviceID"></app-servicepicture>
+    </div>
+  </div>
+
+<div class="submenu">
+  <mat-tab-group>
+    <mat-tab label="Services Offered">
+      <!-- <div class="calendar">
+        <app-calendar [markdate]="this.markedDate" (dateClick)="setDate($event)"></app-calendar>
+      </div>
+      <div class="timepicker">
+        <mat-form-field>
+          <input [(ngModel)]="settime" matInput type="time" placeholder="Time">
+       </mat-form-field>
+      </div> -->
+     
+      
+      <div class="servicepagecontainer">
+        <div class="subcategories">
+          <div class="subcat" *ngFor="let subcat of subcategories">
+            <app-subcategories (subcatClicked)="addService($event)"  [subcategory]="subcat"></app-subcategories>
+          </div>
+        </div>
+        <h2>PICKED SUBCATEGORY</h2>
+        <div [style.height]="pickedsub.length > 0 ? '17em':'0em'" class="pickedsubcategories">
+          <div class="pickedsub" *ngFor="let subcat of pickedsub">
+            <app-subcategories (subcatClicked)="removeService($event)" [icon]="'eject'" [text]="''" [subcategory]="subcat"></app-subcategories>
+          </div>
+        </div>
+        <div (click)="booked||pickedsub.length == 0? null:bookout()" [class]="booked||pickedsub.length == 0? 'bookout_disable':'bookout'">
+          <h2>BOOK NOW</h2>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Homepage">
+      <div class="pagecontainer">
+        
+      </div>
+    </mat-tab>
+    <mat-tab label="Owner Profile">
+      <div class="pagecontainer">
+        
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+  <div *ngIf="booked" class="bookings">
+    <h4> THERE IS ALREADY A BOOKING IN THIS SERVICE PLEASE WAIT FOR THE SERVICE PROVIDER RESPONSE</h4>
+    <app-booking [booking]="booked_data"></app-booking>
+  </div>
+</div>
+
+  <div class="middlecontainer">
+    <div class="bottomcontainer">
+    <div class="feedback">
+      <div class="rating">
+      </div>
+      <div class="comments">
+        <div *ngFor="let comment of comments" class="comment">
+          <app-comment [comment]="comment"></app-comment>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

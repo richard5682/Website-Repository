@@ -1,0 +1,51 @@
+<div #main class="main">
+    <div class="wrapper">
+        <div class="form">
+            <div class="header">
+                <h1>{{this.creation_mode?'ADD PRODUCTS':'EDIT PRODUCTS'}}</h1>
+                <button (click)="cancel()" mat-icon-button>
+                    <mat-icon>cancel</mat-icon>
+                </button>
+            </div>
+            <div class="body">
+                <div class="topbody">
+                    <div class="preview">
+                        <app-productblock [product]="current_product"></app-productblock>
+                    </div>
+                </div>
+                
+                <div class="bottombody">
+                    <div class="toppart">
+                        <div *ngIf="items" class="text">
+                            <mat-form-field>
+                                <mat-label>Items</mat-label>
+                                <mat-select #select (selectionChange)="itemidchange($event)">
+                                    <mat-option *ngFor="let item of items" [value]="item.id">{{item.title}}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <app-imageuploader #image (imagechange)="imagechange($event)"></app-imageuploader>
+                    </div>
+                    <div class="text">
+                        <app-textbox #title (changeval)="titlechange($event)" [type]="'text'" label="Title"></app-textbox>
+                    </div>
+                    <div class="text">
+                        <app-textbox #desc (changeval)="descriptionchange($event)" [type]="'text'" label="Description"></app-textbox>
+                    </div>
+                    <div class="text">
+                        <app-textbox #price (changeval)="pricechange($event)" [type]="'text'" label="Price"></app-textbox>
+                    </div>
+                    <div class="text">
+                        <app-textbox #extra (changeval)="extrachange($event)" [type]="'text'" label="Extra"></app-textbox>
+                     </div>
+                </div>
+                <div (click)="creation_mode? createProduct():editProduct()" class="footer">
+                    <mat-icon>check</mat-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="shadow">
+
+    </div>
+</div>

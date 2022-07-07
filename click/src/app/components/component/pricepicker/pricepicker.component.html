@@ -1,0 +1,17 @@
+<div class="wrapper">
+  <mat-form-field appearance="outline">
+    <input matInput (change)="calculateTotal()" autocomplete="off" type='number' [(ngModel)]="currentval">
+    <span matPrefix>&#8369;</span>
+    <div class="hint">
+      <p>TOTAL : {{total? total:'0'}}</p>
+    </div>
+    <div class="suffix" matSuffix>
+      <p >+ %{{percentage*100}}</p>
+      <button (click)="emitPrice()" mat-icon-button >
+        <mat-icon>
+          payment
+        </mat-icon>
+      </button>
+    </div> 
+  </mat-form-field>
+</div>

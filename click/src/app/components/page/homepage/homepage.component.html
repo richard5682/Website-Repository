@@ -1,0 +1,85 @@
+
+<div class="wrapper">
+    <div class="topcontainer">
+        <div class="searchbarcontainer">
+            
+        </div>
+        <div class="topbody">
+            <!-- <div class="mainbillboard">
+                <img src="assets/image3.PNG">
+            </div> -->
+            <div class="billboardcontainer">
+                <app-billboard-wide></app-billboard-wide>
+            </div>
+            <div class="buttons">
+                <div class="button borderright">
+                    <mat-icon>smartphone</mat-icon>
+                    DOWNLOAD
+                </div>
+                <div class="button borderright">
+                    <mat-icon>share</mat-icon>
+                    FOLLOW US
+                </div>
+                <div class="button">
+                    <mat-icon>contact_support</mat-icon>
+                    CONTACT US
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="middlecontainer">
+        <div class="board">
+            <h1>INSTANT BOOKING</h1>
+            <h2 *ngIf="this.login.userLoggedIn">{{"Services on "+this.login.userLoggedIn.address.province+","+this.login.userLoggedIn.address.city+","+this.login.userLoggedIn.address.brgy}}</h2>
+            <hr>
+            <div class="categorycontainer">
+                <app-servicepicker2 (CategoryPicked)="categoryClick($event)"></app-servicepicker2>
+            </div>
+            <div class="subcategoriescontainer">
+                <div *ngIf="!subcategories || subcategories.length == 0" class="icon">
+                    <app-icontemplate [icon]="'cancel'" [text]="'CHOOSE A CATEGORY'"></app-icontemplate>
+                </div>
+                <div *ngFor="let subcategory of subcategories" class="subcategories">
+                    <app-subcategories [available]="subcategory.available" [subcategory]="subcategory.subcat" (subcatClicked)="subcategoryClick($event)"></app-subcategories>
+                </div>
+
+            </div>
+        </div>
+        <div class="emergency board">
+            <h1>EMERGENCY SERVICES</h1>
+            <app-emergencyquerier></app-emergencyquerier>
+        </div>
+    </div>
+    <!-- <div class="middlecontainer">
+        <div *ngIf="query_services" class="listcontainer">
+            <app-servicelist  [horizontal]="true" titlecolor="black" [title]="'QUERY SERVICES'" [shadow]='true' [services]="query_services"></app-servicelist>
+        </div>
+        <div class="listcontainer">
+            <app-servicelist [horizontal]="true" iconColor="green" icon="cleaning_services" titlecolor="green" [title]="'CLEANING SERVICE'" [shadow]='true' [services]="cleaning_services"></app-servicelist>
+        </div>
+        <div class="listcontainer">
+            <app-servicelist [horizontal]="true" iconColor="green" icon="cleaning_services" titlecolor="green" [title]="'LAUNDRY SERVICE'" [shadow]='true' [services]="laundry_services"></app-servicelist>
+        </div>
+        <div class="listcontainer">
+            <app-servicelist [horizontal]="true" iconColor="green" icon="cleaning_services" titlecolor="green" [title]="'FOOD SERVICE'" [shadow]='true' [services]="food_services"></app-servicelist>
+        </div>
+        <div class="listcontainer">
+            <app-servicelist [horizontal]="true" iconColor="green" icon="cleaning_services" titlecolor="green" [title]="'CARPENTRY SERVICE'" [shadow]='true' [services]="carpentry_services"></app-servicelist>
+        </div>
+        <div class="listcontainer">
+            <app-servicelist [horizontal]="true" iconColor="orangered" icon="whatshot" [title]="'POPULAR SERVICES'" [shadow]='true' [services]="food_services"></app-servicelist>
+        </div>
+        <div   class="listcontainer">
+            <app-servicelist [horizontal]="true" [title]="'NEW SERVICES'" [shadow]='true' [services]="food_services"></app-servicelist>
+        </div>
+    </div>
+    <div class="bottomcontainer">
+        <div class="listcontainer">
+            <app-servicelist *ngIf="all_services" titlecolor="black" [horizontal]="false" [title]="'SERVICES'" [shadow]='false' [services_array]="all_services"></app-servicelist>
+        </div>
+    </div> -->
+</div>
+<div #backdrop [style.backgroundColor]="backdrop_color" class="backdrop">
+    <img [style.opacity]="image_opacity" [src]="backdrop_picture">
+</div>

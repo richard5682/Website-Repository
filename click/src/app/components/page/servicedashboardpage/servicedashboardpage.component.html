@@ -1,0 +1,36 @@
+<div class="wrapper">
+  <div class="header">
+    <h1>SERVICE DASHBOARD</h1>
+  </div>
+  <div class="container">
+    <mat-tab-group>
+      <mat-tab label="Bookings">
+        <h1>BOOKINGS</h1>
+        <div  class="booking">
+          <app-serviceoverview [servicedata]="service"></app-serviceoverview>
+          </div>
+        </mat-tab>
+      <mat-tab label="Picture">
+        <h1>Picture</h1>
+      </mat-tab>
+      <mat-tab label="Information">
+        <h1>Information</h1>
+      </mat-tab>
+      <mat-tab label="Forms">
+        <h1>Forms</h1>
+        <div class="editor">
+          <div class="subcategorypicker">
+            <div *ngFor="let subcategory of subcategories" class="subcategory">
+              <app-subcategories (subcatClicked)="subcatpicked($event)" [subcategory]="subcategory" [icon]="'edit'" [text]="'EDIT'"></app-subcategories>
+            </div>
+          </div>
+          <h1>Editor</h1>
+          <app-formcreation *ngIf="pickedform" [form]="pickedform"></app-formcreation>
+          <div *ngIf="!pickedform" class="icon">
+            <app-icontemplate icon="dangerous" text="NO SERVICE SELECTED" color="grey"></app-icontemplate>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

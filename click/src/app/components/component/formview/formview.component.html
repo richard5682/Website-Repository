@@ -1,0 +1,40 @@
+<div id="wrapper" class="wrapper">
+  <div class="maincontainer">
+    <h1>BOOKING INFO</h1>
+    <div class="longcontainer">
+      <h2>{{form? form.subcategory+" Service":"Category"}}</h2>
+      <div *ngFor="let form of formcomponents" class="container">
+        <div *ngIf="form.textbox != undefined" class="formcontainer">
+          <p>{{form.id+1+") "+form.textbox.desc}}</p>
+          <mat-form-field appearance="outline">
+            <mat-label>{{form.textbox.label}}</mat-label>
+            <input matInput [(ngModel)]="values[form.id]" autocomplete="off">
+          </mat-form-field>
+        </div>
+
+
+        <div *ngIf="form.select != undefined" class="formcontainer">
+          <p>{{form.id+1+") "+form.select.desc}}</p>
+          <mat-form-field appearance="outline">
+            <mat-label>{{form.select.label}}</mat-label>
+            <mat-select [(value)]="values[form.id]">
+              <mat-option *ngFor="let option of form.select.options" [value]="option.value">
+                {{option.value}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <hr>
+
+      </div>
+    </div>
+    <div class="footer">
+      <button (click)="submit()" mat-raised-button>
+        Submit
+      </button>
+      <button (click)="close()" mat-raised-button>
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>

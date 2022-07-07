@@ -1,0 +1,28 @@
+.wrapper{
+    width: 100%;
+    z-index: 100;
+    display:block;
+    
+    h2{
+        background-color: rgb(235, 152, 0);
+        font-weight: bolder;
+        letter-spacing: 0.2em;
+        margin:0;
+        padding:0.4em;
+        text-align: center;
+        border-radius: 0.5em 0.5em 0 0;
+    }
+    .container{
+        width:100%;
+        background-color: cornflowerblue;
+        display:flex;
+        .logincontainer{
+            p{
+                font-weight: bold;
+            }
+            img{
+                max-width: 4em;
+            }
+        }
+    }
+}

@@ -1,0 +1,37 @@
+.wrapper{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    .rejected{
+        color:red;
+        h1{
+            background-color: red;
+        }
+    }
+    .pending{
+        color:black;
+
+    }
+    .accepted{
+        color:green;
+        h1{
+            background-color: green;
+        }
+    }
+    .cancelled{
+        color:gray;
+        h1{
+            background-color: gray;
+        }
+    }
+    h1{
+        margin:0;
+        background-color: orangered;
+        color:white;
+    }
+    .buttons{
+        padding:0.5em;
+        color:white;
+        background-color: lightgray;
+    }
+}

@@ -1,0 +1,8 @@
+<div class="wrapper">
+  <div class="scrollable">
+    <div (click)="categoryClicked(category.value)" *ngFor="let category of Category" class="category">
+      <img [src]="subcat.CatPicture[category.value]">
+      <h4>{{category.value}}</h4>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<div #editor class="wrapper">
+  <div class="container">
+    <div class="title">
+      <h1>EDITOR</h1>
+    </div>
+    <div class="closebutton">
+      <button (click)="hide()" mat-icon-button class="grey">
+        <mat-icon>
+          close
+        </mat-icon>
+      </button>
+    </div>
+    <div class="form">
+      <app-textbox #question type="textarea" label="Question"></app-textbox>
+      <app-textbox #answer label="Answer"></app-textbox>
+      <app-textbox #choices1 label="Choices1"></app-textbox>
+      <app-textbox #choices2 label="Choices2"></app-textbox>
+      <app-textbox #choices3 label="Choices3"></app-textbox>
+      <div class="choices">
+
+      </div>
+      <app-textbox #name label="Name"></app-textbox>
+      <mat-form-field appearance="fill">
+        <mat-label>Subject</mat-label>
+        <mat-select #subject >
+          <mat-option *ngFor="let subject of subjects" [value]="subject">
+            {{subject}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>State</mat-label>
+        <mat-select #state>
+          <mat-option [value]="'1'">
+            Active
+          </mat-option>
+          <mat-option [value]="'0'">
+            InActive
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="buttons">
+        <button (click)="save()" mat-icon-button class="green">
+          <mat-icon>
+            save
+          </mat-icon>
+        </button>
+        <button (click)="delete()" mat-icon-button class="red">
+          <mat-icon>
+            delete
+          </mat-icon>
+        </button>
+      </div>
+      
+    </div>
+  </div>
+</div>

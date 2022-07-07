@@ -1,0 +1,17 @@
+.wrapper{
+    width:fit-content;
+    margin:0em;
+    
+    button{
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 5px 5px 0 rgba(128, 128, 128, 0.473);
+        width: 5em;
+        height:5em;
+        border: solid 5px rgba(0, 0, 0, 0.349);
+        mat-icon{
+            font-size:3em;
+            right:0.2em;
+            position: relative;
+        }
+    }
+}

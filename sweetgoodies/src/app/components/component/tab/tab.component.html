@@ -1,0 +1,10 @@
+<div class="wrapper">
+  <div (click)="router.navigate(['homepage'])" class="logo">
+    <h1>Sweet Goodies</h1>
+  </div>
+  <div class="buttons">
+    <h1 *ngIf="admin" (click)="router.navigate(['admin'])">ADMIN</h1>
+    <h1 (click)="router.navigate(['menu'])">MENU</h1>
+    
+  </div>
+</div>

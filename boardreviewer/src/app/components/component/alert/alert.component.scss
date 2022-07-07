@@ -1,0 +1,46 @@
+.wrapper{
+    width:100%;
+    height:100%;
+    background-color: rgba(0, 0, 0, 0.384);
+    position: fixed;
+    z-index: 110;
+    top:0;
+    display:none;
+    flex-direction: column;
+    justify-content: center;
+    .container{
+        width:fit-content;
+        height:fit-content;
+        min-height: 5em;
+        padding:2em;
+        display: flex;
+        background-color: rgb(255, 255, 255);
+        border-radius: 1em;
+        box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.493);
+        margin:auto;
+
+        .containerinner{
+  
+            margin: auto;
+            width: 100%;
+            .icon{
+                width: 100%;
+                text-align: center;
+                color:darkred;
+                mat-icon{
+                    position: relative;
+                    right:0.4em;
+                    font-size: 5em;
+                    
+                }
+            }
+            
+            mat-spinner{
+                margin:auto;
+            }
+            h4{
+                text-align: center;
+            }
+        }
+    }
+}

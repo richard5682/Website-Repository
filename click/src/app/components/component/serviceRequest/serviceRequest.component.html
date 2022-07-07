@@ -1,0 +1,25 @@
+<div class="wrapper">
+  <div class="header">
+    <h2>#{{service ? serviceRequest.id : "LOADING"}}</h2>
+  </div>
+  <div class="container">
+    <div class="container1">
+      <p><strong>SERVICE ID:</strong><br> #{{service ? service.serviceid : "LOADING"}}</p>
+      <p><strong>SERVICE NAME:</strong> <br> {{service ? service.title : "LOADING"}}</p>
+      <p><strong>OWNER NAME:</strong><br> {{owner ? owner.lastname+" "+owner.firstname:"LOADING"}} </p>
+    </div>
+    <div class="container2">
+      <p><strong>CATEGORY :</strong><br> {{service? service.category : "LOADING"}}</p>
+      <p><strong>SUBCATEGORY :</strong><br> {{service? service.subcategories : "LOADING"}}</p>
+    </div>
+    <div class="container3">
+      <button (click)="Accept()" [style.color]="state=='2'? 'grey':'green'" [disabled]="state=='2'? true:false" matTooltip="Accept" class="accept"  mat-icon-button>
+        <mat-icon >thumb_up_of_alt</mat-icon>
+      </button>
+      <button (click)="Decline()" [style.color]="state=='1'? 'grey':'red'" [disabled]="state=='1'? true:false" matTooltip="Decline" class="decline" mat-icon-button>
+        <mat-icon>thumb_down_of_alt</mat-icon>
+      </button>
+    </div>
+  </div>
+  
+</div>

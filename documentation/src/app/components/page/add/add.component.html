@@ -1,0 +1,58 @@
+<div class="wrapper">
+  <h1>Add {{type}}</h1>
+  <div *ngIf="type=='component'" class="container">
+    <label>Class</label><br>
+    <input #c_class type=text><br>
+    <label>Selector</label><br>
+    <input #c_selector type=text><br>
+    <label>Description</label><br>
+    <textarea class="big" #c_desc type=text></textarea><br>
+    <label>Input</label><br>
+    <textarea class="med" #c_input type=text></textarea><br>
+    <label>Output</label><br>
+    <textarea class="med" #c_output type=text></textarea><br>
+    <button mat-raised-button (click)="router.navigate(['homepage'])">Back</button>
+    <button mat-raised-button (click)="
+    addComponent(c_class.value,c_selector.value,c_desc.value,c_input.value,c_output.value)">Submit</button>
+  </div>
+  <div *ngIf="type=='service'" class="container">
+    <label>Class</label><br>
+    <input #s_class type=text><br>
+    <label>Description</label><br>
+    <textarea class="big" #s_desc type=text></textarea><br>
+    <label>Methods</label><br>
+    <textarea class="med" #s_method type=text></textarea><br>
+    <button mat-raised-button (click)="router.navigate(['homepage'])">Back</button>
+    <button mat-raised-button (click)="
+    addService(s_class.value,s_desc.value,s_method.value)">Submit</button>
+   
+  </div>
+  <div *ngIf="type=='page'" class="container">
+    <label>Class</label><br>
+    <input #p_class type=text><br>
+    <label>Description</label><br>
+    <textarea class="big" #p_desc type=text></textarea><br>
+    <label>Selector</label><br>
+    <textarea class="med" #p_selector type=text></textarea><br>
+    <label>RouteSelector</label><br>
+    <textarea class="med" #p_routeselector type=text></textarea><br>
+    <label>Params</label><br>
+    <textarea class="med" #p_params type=text></textarea><br>
+    <button mat-raised-button (click)="router.navigate(['homepage'])">Back</button>
+    <button mat-raised-button (click)="
+    addPage(p_class.value,p_desc.value,p_selector.value,p_routeselector.value,p_params.value)">Submit</button>
+  </div>
+  <div *ngIf="type=='data'" class="container">
+    <label>Class</label><br>
+    <input #d_class type=text><br>
+    <label>Description</label><br>
+    <textarea class="big" #d_desc type=text></textarea><br>
+    <label>Data</label><br>
+    <textarea class="med" #d_data type=text></textarea><br>
+    <button mat-raised-button (click)="router.navigate(['homepage'])">Back</button>
+    <button mat-raised-button (click)="
+    addData(d_class.value,d_desc.value,d_data.value)">Submit</button>
+    
+  </div>
+  
+</div>

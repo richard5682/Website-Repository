@@ -1,0 +1,21 @@
+<div class="wrapper">
+  <div class="container">
+    <div *ngFor="let message of messages" [class]="message.senderid==loginid ? 'right':'left'"> 
+      <div *ngIf="message.type == 'text'" class="bubble">
+        {{message.message}}
+      </div>
+      <div *ngIf="message.type == 'image'" class="bubble">
+        <img [src]="message.picturedata">
+      </div>
+      <div *ngIf="message.type == 'system'" class="bubblesystem">
+        {{message.message}}
+      </div>
+      <div *ngIf="message.type == 'forms'" class="bubbleforms">
+        <app-formanswerview [formanswerid]="message.message"></app-formanswerview>
+      </div>
+      <div *ngIf="message.type == 'pricerequest' && loginid" class="bubbleprice">
+        <app-pricerequestviewer (accepted)="pricerequestaccept(message)" (decline)="pricerequestdecline(message,$event)" [isUser]="message.senderid != loginid" [pricedata]="message.message"></app-pricerequestviewer>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+.wrapper{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1em;
+    
+    .iconcontainer{
+        text-align: center;
+        mat-icon{
+            font-size: 8em;
+            width: 1em;
+            height: 1em;
+            
+        }
+    }
+    .textcontainer{
+        text-align: center;
+        font-weight: 600;
+        letter-spacing: 0.7em;
+    }
+}

@@ -1,0 +1,49 @@
+<div class="wrapper">
+  <div class="questionid">
+    <h2>QUESTION ID : {{question.question.id}}</h2>
+  </div>
+  <div class="question">
+    <h2>{{question.question.question}}</h2>
+  </div>
+  <div *ngIf="choices" class="choices">
+    <div (click)="answer(0)" [ngClass]="isRevealing && choices[0].answer? 'choice correct':'choice'">
+      <div class="letter">
+        <h3>A</h3>
+      </div>
+      <div class="text">
+        <h3>{{choices[0].choice}}</h3>
+      </div>
+    </div>
+
+    <div (click)="answer(1)" [ngClass]="isRevealing && choices[1].answer? 'choice correct':'choice'">
+      <div class="letter">
+        <h3>B</h3>
+      </div>
+      <div class="text">
+        <h3>{{choices[1].choice}}</h3>
+      </div>
+    </div>
+
+    <div (click)="answer(2)" [ngClass]="isRevealing && choices[2].answer? 'choice correct':'choice'">
+      <div class="letter">
+        <h3>C</h3>
+      </div>
+      <div class="text">
+        <h3>{{choices[2].choice}}</h3>
+      </div>
+    </div>
+
+    <div (click)="answer(3)" [ngClass]="isRevealing && choices[3].answer? 'choice correct':'choice'">
+      <div class="letter">
+        <h3>D</h3>
+      </div>
+      <div class="text">
+        <h3>{{choices[3].choice}}</h3>
+      </div>
+    </div>
+
+  </div>
+  <div class="timer">
+    <h1>{{timer}}</h1>
+  </div>
+</div>
